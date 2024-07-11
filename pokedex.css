@@ -1,0 +1,11 @@
+#sprite {
+    width: 250px;
+    height: auto;
+    
+}
+#pokename {
+    font-size: 20px;
+    display: block;
+    width: 250px;
+    text-align: center;
+}
