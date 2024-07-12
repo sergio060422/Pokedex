@@ -1,11 +1,37 @@
 #sprite {
     width: 250px;
+    height: 300px;
+    display: block;
+}
+#spcon {
+    padding: 5px;
+
+    margin-bottom: 5px;
+}
+#maintype, #sectype{
+    width: 20%;
     height: auto;
-    
 }
 #pokename {
-    font-size: 20px;
+    font-size: 30px;
     display: block;
     width: 250px;
     text-align: center;
+    font-family: monospace;
+    margin-bottom: 20px;
+    border-bottom-style: solid;
+}
+#card {
+    width: fit-content;
+    margin: 10px;
+    padding: 10px 10px 0px 10px;
+    border-style: solid;
+    border-radius: 10px;
+    display: none;
+    background-image: url(Images/background3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+   
+
 }
