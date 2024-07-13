@@ -14,8 +14,14 @@ function set_info(e){
         let pokename = document.getElementById("pokename");
         let lk = data["sprites"]["other"]["dream_world"]["front_default"];
         let poketype = data["types"]["0"]["type"]["name"];
+
+        if(lk == null){
+            lk = data["sprites"]["front_default"];
+        }
         
-        card.style.display = "block";
+        console.log(data);
+   
+        card.style.display = "inline-block";
         sprite.src = lk;
         maintype.src = "Types/"+poketype+".png"; 
         pokename.textContent = name[0].toUpperCase() + name.substr(1, name.length);
@@ -30,6 +36,23 @@ function set_info(e){
             let sectype = document.getElementById("sectype");
             sectype.style.display = "none";    
         }
+        
+        let sum = 0;
+        
+        for(let i = 0; i <= 5; i++){
+            let curr = document.getElementById(i + "");
+            let bar = curr.childNodes.item(3);
+            let val = curr.childNodes.item(5);
+            let stat_val = data["stats"][i + ""]["base_stat"];
+            
+            sum += stat_val;
+            
+            bar.style.width = stat_val * 3 + "px";
+            val.textContent = stat_val;
+        }
+        
+        let tot = document.getElementById("tot");
+        tot.textContent = "Total: " + sum;
     }
    
 }
