@@ -1,8 +1,8 @@
 #info, #info2, #main {
-    width: 50%;
-    margin-top: 10px;
+    width: 90%;
 }
 #info2 {
+    transform: translateX(0px);
     position: relative;
 }
 #textbar {

@@ -34,8 +34,8 @@
     background-size: cover;
 }
 #sprite {
-    width: 250px;
-    height: 300px;
+    width: 220px;
+    height: auto;
     display: block;
     margin-bottom: 15px;
     position: relative;
