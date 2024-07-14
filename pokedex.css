@@ -78,7 +78,7 @@
     position: relative;
 }
 #info, #info2 {
-    display: none;
+    display: inline-block;
     margin-left: 20px;
     padding: 15px 30px 30px 30px;
     border-width: 1px;
@@ -90,9 +90,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
+    background-image: url(Images/background6.jpg);
 }
 #bstat {
     font-size: 30px;
+    text-shadow: 2px 2px 5px steelblue;
 }
 .stname {
     width: 80px;  
@@ -131,6 +133,7 @@
     font-size: 24px;
     position: relative;
     top: 16px;
+    text-shadow: 2px 2px 5px steelblue;
 }
 #def {
     background-color: blue;
