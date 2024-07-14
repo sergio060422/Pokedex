@@ -1,3 +1,9 @@
-#info, #info2, #card {
+#info, #info2, #main {
     width: 100%;
+}
+#info, #info2 {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
 }

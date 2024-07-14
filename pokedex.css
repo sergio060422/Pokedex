@@ -78,7 +78,7 @@
     position: relative;
 }
 #info, #info2 {
-    display: block;
+    display: inline-block;
     margin-left: 20px;
     padding: 15px 30px 30px 30px;
     border-width: 1px;
