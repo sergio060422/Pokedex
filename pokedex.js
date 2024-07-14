@@ -12,6 +12,7 @@ function set_info(e){
         let sprite = document.getElementById("sprite");
         let card = document.getElementById("card");
         let info = document.getElementById("info");
+        let main = document.getElementById("main");
         let pokename = document.getElementById("pokename");
         let lk = data["sprites"]["other"]["dream_world"]["front_default"];
         let poketype = data["types"]["0"]["type"]["name"];
@@ -20,7 +21,8 @@ function set_info(e){
             lk = data["sprites"]["front_default"];
         }
         
-        info.style.display = "block";
+        main.style.display = "block";
+        info.style.display = "inline-block";
         card.style.display = "inline-block";
         sprite.src = lk;
         maintype.src = "Types/"+poketype+".png"; 
@@ -44,10 +46,16 @@ function set_info(e){
             let bar = curr.childNodes.item(3);
             let val = curr.childNodes.item(5);
             let stat_val = data["stats"][i + ""]["base_stat"];
+            let mp = 1.5;
             
             sum += stat_val;
             
-            bar.style.width = stat_val * 3 + "px";
+            if(stat_val > 200){
+                mp = 1;
+                stat_val -= 30;
+            }
+            
+            bar.style.width = stat_val * mp + "px";
             val.textContent = stat_val;
         }
         
