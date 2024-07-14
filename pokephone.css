@@ -3,7 +3,12 @@
     margin-top: 10px;
 }
 #info2 {
-    transform: translateX(10px);
     position: relative;
 }
-
+#textbar {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+#start {
+    height: 22px;
+}
