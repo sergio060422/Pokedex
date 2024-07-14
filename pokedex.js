@@ -16,7 +16,7 @@ function set_info(e){
         let pokename = document.getElementById("pokename");
         let lk = data["sprites"]["other"]["dream_world"]["front_default"];
         let poketype = data["types"]["0"]["type"]["name"];
-
+        console.log(data);
         if(lk == null){
             lk = data["sprites"]["front_default"];
         }
@@ -51,8 +51,7 @@ function set_info(e){
             sum += stat_val;
             
             if(stat_val > 200){
-                mp = 1;
-                stat_val -= 30;
+                mp = 1.2;
             }
             
             bar.style.width = stat_val * mp + "px";

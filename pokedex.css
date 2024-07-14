@@ -1,6 +1,7 @@
 
 #bar {
    margin-left: 20px;
+   text-align: center;
 }
 #textbar {
     font-size: 18px;
@@ -13,6 +14,7 @@
     border-width: 1px;
     border-radius: 20px;
     margin: 20px;
+    margin-bottom: 10px;
     display: none;
     background-image: url(Images/back10.avif);
     background-position: 50% 50%;
@@ -75,39 +77,37 @@
 #main {
     position: relative;
 }
-#info {
+#info, #info2 {
     display: none;
     margin-left: 20px;
-    position: absolute;
-    top: 50%;
-    left: 1%;
-    transform: translateY(-50%);
-    height: 390px;
-    background-color: rgba(0, 201, 235, 0.8);
-    padding: 15px 30px 15px 30px;
+    padding: 15px 30px 30px 30px;
     border-width: 1px;
     border-radius: 20px;
     border-style: solid;
-    width: 400px;
+    width: 42%;
+    height: 370px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 #bstat {
-    font-size: 36px;
+    font-size: 30px;
 }
 .stname {
-    width: 90px;
-   
+    width: 80px;  
 }
 .val {
     left: 5px;
+    color: darkgreen;
 }
 .stcon {
     height: 40px;
     margin-top: 10px;
-    position: relative;
 }
 .stname, .bar, .val {
     display: inline-block;
-    font-size: 24px;
+    font-size: 20px;
     position: relative;
 }
 .bar {
@@ -128,9 +128,9 @@
     background-color: red;
 }
 #tot {
-    font-size: 28px;
-    position: absolute;
-    bottom: 15px;
+    font-size: 24px;
+    position: relative;
+    top: 16px;
 }
 #def {
     background-color: blue;
@@ -143,4 +143,9 @@
 }
 #speed {
     background-color: yellow;
+}
+#info2 {
+    display: inline-block;
+    position: absolute;
+    transform: translateX(-10px);
 }
