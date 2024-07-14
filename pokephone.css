@@ -1,5 +1,9 @@
 #info, #info2, #main {
-    width: 100%;
+    width: 95%;
     margin-top: 10px;
+}
+#info2 {
+    transform: translateX(10px);
+    position: relative;
 }
 
