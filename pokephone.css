@@ -1,5 +1,7 @@
 #info, #info2, #main {
-    width: 90%;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 #info2 {
     transform: translateX(0px);
@@ -10,4 +12,8 @@
 }
 #start {
     height: 20px;
+    top: -20px;
+}
+#sprite {
+    width: 200px;
 }
