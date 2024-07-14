@@ -47,27 +47,14 @@
     height: auto;
     margin-bottom: 5px;
 }
-#maintype {
-    margin-left: 10px;
-}
 #pokename {
     font-size: 36px;
-    display: block;
-    width: 250px;
-    text-align: center;
     margin-bottom: 20px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
     text-shadow: 2px 2px 5px steelblue;
 }
 #card {
-    width: 270px;
     margin: 15px 0px 15px 15px; 
     padding: 10px 0px 0px 0px;
-}
-#main {
-    position: relative;
 }
 #info, #info2 {
     display: inline-block;

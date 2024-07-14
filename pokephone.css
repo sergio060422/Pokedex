@@ -1,15 +1,7 @@
 #info, #info2, #main {
     width: 100%;
-}
-#infocon {
-    position: relative;
-}
-#info, #info2 {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     margin-top: 10px;
 }
-#main {
-    width: 960px;
+#infocon {
+    text-align: center;
 }
