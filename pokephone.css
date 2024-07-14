@@ -1,5 +1,5 @@
 #info, #info2, #main {
-    width: 100%;
+    width: 90%;
     margin-left: 10px;
     margin-right: 10px;
 }
@@ -12,8 +12,11 @@
 }
 #start {
     height: 20px;
-    top: -20px;
+    top: -22px;
+    left: 80%;
 }
 #sprite {
-    width: 200px;
+    width: 220px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
