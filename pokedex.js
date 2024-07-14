@@ -23,7 +23,6 @@ function set_info(e){
         
         infocon.style.display = "block";
         main.style.display = "block";
-        card.style.display = "inline-block";
         sprite.src = lk;
         maintype.src = "Types/"+poketype+".png"; 
         pokename.textContent = name[0].toUpperCase() + name.substr(1, name.length);
