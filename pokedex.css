@@ -17,6 +17,7 @@ body {
     border-bottom-style: solid;
     border-bottom-width: 30px;
     width: 100%;
+    margin-bottom: 20px;
 }
 #logo {
     height: 100px;
