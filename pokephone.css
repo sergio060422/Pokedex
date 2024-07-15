@@ -1,5 +1,5 @@
 #info, #info2, #main, #textbar {
-    width: 90%;
+    width: 85%;
     margin-left: 5px;
 }
 #info2 {
@@ -28,5 +28,5 @@
     height: 300px;
 }
 #logo {
-    height: 80px;
+    height: 60px;
 }
