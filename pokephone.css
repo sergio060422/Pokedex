@@ -1,6 +1,6 @@
 #info, #info2 {
     margin-right: 0px;
-    margin-left: 4px;
+    margin-left: 5px;
 }
 #main {
     width: 260px;
@@ -28,8 +28,8 @@
 }
 #start {
     height: 25px;
-    top: -32px;
-    left: 60px;
+    top: -31px;
+    left: 90px;
 }
 #pokename {
     font-size: 32px;
