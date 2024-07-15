@@ -39,7 +39,6 @@ body {
     text-align: center;
     padding: 20px;
     margin: 10px;
-    margin-top: 20px;
     background-image: url(Images/back10.avif);
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -114,7 +113,6 @@ body {
     position: relative;
 }
 .bar {
-    width: 100px;
     height: 20px;
     border-style: solid;
     border-width: 1px;
