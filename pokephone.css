@@ -8,10 +8,13 @@
 }
 #textbar {
     font-size: 22px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 #start {
     height: 20px;
-    top: -22px;
+    top: -23px;
     left: 42%;
 }
 #sprite {
