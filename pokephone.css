@@ -1,5 +1,5 @@
 #info, #info2, #main, textbar {
-    width: 99%;
+    width: 98%;
     margin-left: 5px;
 }
 #info2 {
@@ -12,7 +12,7 @@
 #start {
     height: 20px;
     top: -22px;
-    left: 45%;
+    left: 42%;
 }
 #sprite {
     width: 220px;
