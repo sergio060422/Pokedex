@@ -9,6 +9,9 @@
     border-width: 1px;
     text-indent: 15px;
 }
+#logo {
+    height: 100px;
+}
 #start {
     height: 16px;
     width: auto;

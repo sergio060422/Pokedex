@@ -6,8 +6,12 @@
     transform: translateX(0px);
     position: relative;
 }
+#bar {
+    width: 100%;
+}
 #textbar {
     font-size: 22px;
+    margin-left: 0px;
     padding-top: 5px;
     padding-bottom: 5px;
     position: relative;
@@ -15,7 +19,7 @@
     transform: translateX(-50%);
 }
 #start {
-    height: 28px;
+    height: 27px;
     top: -34px;
     left: 45%;
 }
