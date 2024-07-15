@@ -66,6 +66,8 @@ function get_poke(){
     let textbar = document.getElementById("textbar");
     name = textbar.value;
     
+    name = name.toLowerCase();
+    
     if(name.length){
         let lk = "https://pokeapi.co/api/v2/pokemon/" + name;
         let res = new XMLHttpRequest();
