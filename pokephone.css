@@ -1,4 +1,4 @@
-#info, #info2, #main, textbar {
+#info, #info2, #main, #textbar {
     width: 98%;
     margin-left: 5px;
 }
@@ -8,13 +8,15 @@
 }
 #textbar {
     font-size: 22px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
 }
 #start {
-    height: 20px;
-    top: -23px;
+    height: 28px;
+    top: -24px;
     left: 42%;
 }
 #sprite {
