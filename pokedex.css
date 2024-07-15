@@ -16,6 +16,7 @@ body {
     background-color: red;
     border-bottom-style: solid;
     border-bottom-width: 30px;
+    width: 100%;
 }
 #logo {
     height: 100px;
