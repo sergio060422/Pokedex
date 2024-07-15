@@ -1,7 +1,7 @@
 #info, #info2, #main, textbar {
-    width: 98%;
-    margin-left: 8px;
-    margin-right: 8px;
+    width: auto;
+    margin-left: 5px;
+    
 }
 #info2 {
     transform: translateX(0px);
@@ -13,7 +13,7 @@
 #start {
     height: 20px;
     top: -22px;
-    left: 55%;
+    left: 50%;
 }
 #sprite {
     width: 220px;
