@@ -1,7 +1,9 @@
-#info, #info2, #main, #textbar {
-    width: 85%;
+#info, #info2, #main {
     margin-right: 0px;
     margin-left: 8px;
+}
+#info, #info2, #main {
+    width: 240px;
 }
 #info2 {
     transform: translateX(0px);
@@ -11,22 +13,21 @@
     width: 100%;
 }
 #textbar {
+    width: 90%;
     font-size: 22px;
-    margin-left: 0px;
+    margin-left: 5%;
     padding-top: 5px;
     padding-bottom: 5px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    
 }
 #start {
     height: 25px;
-    top: 2px;
-    left: -15px;
+    top: 4px;
+    left: -20px;
 }
 #sprite {
-    width: 220px;
-    height: 300px;
+    width: 200px;
+    height: 280px;
 }
 #logo {
     height: 60px;
