@@ -20,10 +20,13 @@
 }
 #start {
     height: 25px;
-    top: -33px;
-    left: 45%;
+    top: -32px;
+    left: 44%;
 }
 #sprite {
     width: 220px;
     height: 300px;
+}
+#logo {
+    width: 80px;
 }

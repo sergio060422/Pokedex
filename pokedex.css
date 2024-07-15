@@ -1,7 +1,10 @@
+body {
+    margin: 0px;
+    padding: 0px
+}
 #bar {
    margin-left: 20px;
    text-align: center;
-    background-color: red;
 }
 #textbar {
     font-size: 18px;
@@ -9,8 +12,14 @@
     border-width: 1px;
     text-indent: 15px;
 }
+#hd {
+    background-color: red;
+    border-bottom-style: solid;
+    border-bottom-width: 30px;
+}
 #logo {
     height: 100px;
+    margin: 10px;
 }
 #start {
     height: 16px;
