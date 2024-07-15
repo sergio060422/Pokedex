@@ -16,7 +16,10 @@ function set_info(e){
         let pokename = document.getElementById("pokename");
         let lk = data["sprites"]["other"]["dream_world"]["front_default"];
         let poketype = data["types"]["0"]["type"]["name"];
-        console.log(data);
+        let aud = document.getElementById("aud");
+        let hg = document.getElementById("hg");
+        let wg = document.getElementById("wg");
+        
         if(lk == null){
             lk = data["sprites"]["front_default"];
         }
@@ -26,6 +29,9 @@ function set_info(e){
         sprite.src = lk;
         maintype.src = "Types/"+poketype+".png"; 
         pokename.textContent = name[0].toUpperCase() + name.substr(1, name.length);
+        aud.src = data["cries"]["latest"];
+        hg.textContent = "Height: " + data["height"] * 10 + "cm";
+        wg.textContent = "Weight: " + data["weight"] / 10 + "kg";
         
         if(data["types"].length == 2){
             let poketype2 = data["types"]["1"]["type"]["name"];
@@ -58,7 +64,17 @@ function set_info(e){
         
         let tot = document.getElementById("tot");
         tot.textContent = "Total: " + sum;
+        
+        let lk2 = "https://pokeapi.co/api/v2/pokemon/charizard";
+        let res = new XMLHttpRequest();
+        res.responseType = "json";
+        res.open("GET", lk2, true);
+        res.send(null);
+        res.onload = function(e) {
+            console.log(e.target.response);
+        }
     }
+    
    
 }
 
@@ -83,6 +99,9 @@ function pika_pika(){
     textbar.value = "bulbasaur";
     get_poke();
 }
+
+
+
 
 window.addEventListener("load", add_fun);
 window.addEventListener("load", pika_pika);

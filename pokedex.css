@@ -151,3 +151,32 @@ body {
     position: absolute;
     transform: translateX(-10px);
 }
+#audpanel {
+    height: 80px;
+    margin: 0px;
+}
+#aud {
+    position: relative;
+    left: 60px;
+    height: 40px;
+    bottom: 8px;
+}
+#cry, #aud {
+    display: flex;
+   
+}
+#cry {
+    width: fit-content;
+    font-size: 28px;
+    transform: translateY(27px);
+}
+#hg, #wg {
+    font-size: 28px;
+    margin-top: 20px;
+    display: block;
+}
+
+#char {
+    font-size: 36px;
+    text-shadow: 2px 2px 5px steelblue;
+}
