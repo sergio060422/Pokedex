@@ -1,6 +1,6 @@
 #info, #info2 {
     margin-right: 0px;
-    margin-left: 8px;
+    margin-left: 3px;
 }
 #main {
     width: 260px;
@@ -37,6 +37,15 @@
 #sprite {
     width: 200px;
     height: 280px;
+}
+.stname, .val{
+    font-size: 16px;
+}
+.bar {
+    height: 16px;
+}
+.stname {
+    width: 75px;
 }
 #logo {
     height: 60px;
