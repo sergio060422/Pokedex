@@ -1,16 +1,15 @@
-#info, #info2, #main {
-    margin-right: 0px;
-    margin-left: 8px;
-}
 #main {
     width: 260px;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-left: 0px;
 }
 #info, #info2 {
     width: 85%;
 } 
+#info, #info2, #main {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
 #info2 {
     transform: translateX(0px);
     position: relative;
@@ -21,7 +20,6 @@
 #textbar {
     width: 90%;
     font-size: 22px;
-    margin-left: 5%;
     padding-top: 5px;
     padding-bottom: 5px;
     
