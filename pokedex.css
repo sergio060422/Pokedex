@@ -1,6 +1,7 @@
 #bar {
    margin-left: 20px;
    text-align: center;
+    background-color: red;
 }
 #textbar {
     font-size: 18px;
