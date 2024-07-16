@@ -56,8 +56,8 @@ function set_info(e){
             sum += stat_val;
             
             bar.style.width = stat_val * mp + "px";
-            if(stat_val > 222){
-                bar.style.width = "222px";
+            if(stat_val > 200){
+                bar.style.width = "200px";
             }
             val.textContent = stat_val;
         }
@@ -65,14 +65,7 @@ function set_info(e){
         let tot = document.getElementById("tot");
         tot.textContent = "Total: " + sum;
         
-        let lk2 = "https://pokeapi.co/api/v2/pokemon/charizard";
-        let res = new XMLHttpRequest();
-        res.responseType = "json";
-        res.open("GET", lk2, true);
-        res.send(null);
-        res.onload = function(e) {
-            console.log(e.target.response);
-        }
+       
     }
     
    
