@@ -85,7 +85,7 @@ body {
     border-radius: 20px;
     border-style: solid;
     margin: 10px;
-    width: 43%;
+    width: 45%;
     margin-top: 0px;
     height: 380px;
     position: relative;
@@ -155,7 +155,6 @@ body {
     background-color: yellow;
 }
 #info2 {
-    display: inline-block;
     position: absolute;
     transform: translateX(-10px);
 }

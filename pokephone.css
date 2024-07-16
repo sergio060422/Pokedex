@@ -10,6 +10,7 @@
     margin-left: 0px;
 }
 #info, #info2 {
+    display: block;
     width: 85%;
     position: relative;
     left: 50%;
