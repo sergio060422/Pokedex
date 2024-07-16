@@ -1,12 +1,14 @@
 body {
     margin: 0px;
-    padding: 0px
+    padding: 0px;
 }
 #bar {
    text-align: center;
 }
 #textbar {
-    font-size: 18px;
+    font-size: 22px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border-radius: 20px;
     border-width: 1px;
     text-indent: 15px;
@@ -22,7 +24,7 @@ body {
     margin: 10px;
 }
 #start {
-    height: 16px;
+    height: 18px;
     width: auto;
     position: relative;
     top: 3px;
@@ -31,6 +33,9 @@ body {
     border-width: 1px;
     padding-left: 5px;
     cursor: pointer;
+}
+body {
+    overflow-x: hidden;
 }
 #main {
     border-style: solid;
@@ -95,12 +100,7 @@ body {
     background-image: url(Images/background6.jpg);
 
 }
-#infocon {
-    width: 90%;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-}
+
 #bstat {
     font-size: 30px;
     text-shadow: 2px 2px 5px steelblue;
@@ -182,7 +182,6 @@ body {
     margin-top: 20px;
     display: block;
 }
-
 #char {
     font-size: 36px;
     text-shadow: 2px 2px 5px steelblue;
