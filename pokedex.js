@@ -51,7 +51,7 @@ function set_info(e){
             let bar = curr.childNodes.item(3);
             let val = curr.childNodes.item(5);
             let stat_val = data["stats"][i + ""]["base_stat"];
-            let mp = 1.5;
+            let mp = 1.2;
             
             sum += stat_val;
             

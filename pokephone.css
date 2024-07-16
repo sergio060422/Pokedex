@@ -48,6 +48,7 @@
 }
 .bar {
     height: 16px;
+    border-top-left-radius: 0px;
 }
 .stname {
     width: 70px;
