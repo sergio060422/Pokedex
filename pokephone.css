@@ -50,3 +50,12 @@
 #logo {
     height: 60px;
 }
+#hg, #wg, #cry {
+    font-size: 20px;
+}
+#char {
+    font-size: 30px;
+}
+#aud {
+    width: 40%;
+}
