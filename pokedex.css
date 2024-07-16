@@ -86,19 +86,22 @@ body {
 #info, #info2 {
     display: inline-block;
     padding: 20px;
+    /*
     border-width: 1px;
     border-radius: 20px;
     border-style: solid;
+    */
     margin: 10px;
     width: 45%;
     margin-top: 0px;
     height: 420px;
     position: relative;
+    /*
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
     background-image: url(Images/background6.jpg);
-
+*/
 }
 
 #bstat {
