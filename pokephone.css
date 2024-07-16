@@ -9,13 +9,15 @@
     transform: translateX(-50%);
     margin-left: 0px;
 }
+#info {
+    padding-right: 0px;
+}
 #info, #info2 {
     width: 85%;
 } 
 #info2 {
     transform: translateX(0px);
     position: relative;
-    padding-right: 0px;
 }
 #bar {
     width: 100%;
