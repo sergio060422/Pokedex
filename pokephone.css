@@ -11,6 +11,10 @@
 }
 #info, #info2 {
     width: 85%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0px;
 } 
 #info2 {
     transform: translateX(0px);

@@ -85,14 +85,21 @@ body {
     border-radius: 20px;
     border-style: solid;
     margin: 10px;
+    width: 43%;
     margin-top: 0px;
-    width: 46%;
     height: 380px;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
     background-image: url(Images/background6.jpg);
+
+}
+#infocon {
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 #bstat {
     font-size: 30px;
