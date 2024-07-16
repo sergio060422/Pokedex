@@ -3,6 +3,7 @@ let name = "";
 function add_fun(){
     let start = document.getElementById("start");
     start.addEventListener("click", get_poke);
+    start.addEventListener("click", get_evol);
 }
 
 function set_info(e){
@@ -70,6 +71,58 @@ function set_info(e){
     }
     
    
+}
+
+function set_evol_info(e){
+    if(e.target.status == 200){
+        let data = e.target.response;
+        let evolcon = document.getElementById("evolcon");
+        let evo = document.getElementById("evo");
+        let evoname = document.getElementById("evoname");
+        console.log(data);
+        
+        evolcon.style.display = "block";
+        evo.src = data["sprites"]["front_default"];
+        evoname.textContent = data["name"][0].toUpperCase() + data["name"].substr(1, data["name"].length);
+        
+    }
+}
+
+function set_evol(e){
+    if(e.target.status == 200){
+        let data = e.target.response;
+        let evol = data["evolves_from_species"];
+        
+        if(evol != null){
+            let name = evol["name"];
+            let lk = "https://pokeapi.co/api/v2/pokemon/" + name;
+            let res = new XMLHttpRequest();
+            res.addEventListener("load", set_evol_info);
+            res.responseType = "json";
+            res.open("GET", lk, true);
+            res.send(null);           
+        }
+        else {
+            let evolcon = document.getElementById("evolcon");
+            evolcon.style.display = "none";
+        }
+    }
+}
+
+function get_evol(){
+    let textbar = document.getElementById("textbar");
+    name = textbar.value;
+    
+    name = name.toLowerCase();
+    
+    if(name.length){
+        let lk = "https://pokeapi.co/api/v2/pokemon-species/" + name;
+        let res = new XMLHttpRequest();
+        res.addEventListener("load", set_evol);
+        res.responseType = "json";
+        res.open("GET", lk, true);
+        res.send(null);
+    }
 }
 
 function get_poke(){

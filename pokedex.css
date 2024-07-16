@@ -165,7 +165,7 @@ body {
 #aud {
     position: relative;
     left: 60px;
-    height: 40px;
+    height: 30px;
     bottom: 8px;
 }
 #cry, #aud {
@@ -174,15 +174,42 @@ body {
 }
 #cry {
     width: fit-content;
-    font-size: 28px;
-    transform: translateY(27px);
+    font-size: 24px;
+    transform: translateY(19px);
 }
 #hg, #wg {
-    font-size: 28px;
+    font-size: 24px;
     margin-top: 20px;
     display: block;
 }
-#char {
-    font-size: 36px;
+#char, #pstevo {
+    font-size: 28px;
     text-shadow: 2px 2px 5px steelblue;
+}
+#evolcon {
+    display: none;
+}
+#minicard {
+    width: fit-content;
+    text-align: center;
+}
+#evo {
+    height: 160px;
+    background-image: url(Images/back11.avif);
+    display: block;
+    border-width: 1px;
+    border-radius: 20px;
+    border-style: solid;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+#evoname {
+    font-size: 24px;
+    text-shadow: 2px 2px 5px steelblue;
+    position: relative;
+    top: 35px;
+}
+#pstevo {
+    display: block;
 }
