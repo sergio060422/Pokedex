@@ -24,7 +24,9 @@
     font-size: 22px;
     padding-top: 5px;
     padding-bottom: 5px;
-    
+}
+.stname, .val {
+    top: 7px;  
 }
 #start {
     height: 25px;
@@ -60,5 +62,5 @@
     width: 80%;
 }
 #cry {
-    transform: translateY(24px);
+    transform: translateY(22px);
 }
