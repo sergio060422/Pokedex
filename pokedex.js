@@ -55,6 +55,10 @@ function set_info(e){
             
             sum += stat_val;
             
+            if(stat_val > 222){
+                mp = 1;
+            }
+            
             bar.style.width = stat_val * mp + "px";
             val.textContent = stat_val;
         }
