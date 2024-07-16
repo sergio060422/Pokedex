@@ -28,6 +28,9 @@
 .stname, .val {
     top: 6px;  
 }
+.stname {
+    display: block;
+}
 #start {
     height: 25px;
     top: -31px;
