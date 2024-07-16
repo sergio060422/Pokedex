@@ -12,6 +12,7 @@ body {
     border-radius: 20px;
     border-width: 1px;
     text-indent: 15px;
+    opacity: 0.8;
 }
 #hd {
     background-color: red;
@@ -36,6 +37,8 @@ body {
 }
 body {
     overflow-x: hidden;
+    background-color: #eff1f2;
+    background-image: linear-gradient(180deg, #eff1f2 0%, #2f9de2 100%);
 }
 #main {
     border-style: solid;
@@ -101,7 +104,9 @@ body {
     background-size: cover;
     background-position: 50% 50%;
     background-image: url(Images/background6.jpg);
+    
 */
+
 }
 
 #bstat {

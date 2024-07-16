@@ -16,6 +16,10 @@
     transform: translateX(0px);
     position: relative;
 }
+#info {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
 #bar {
     width: 100%;
 }
