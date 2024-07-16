@@ -61,6 +61,9 @@ function set_info(e){
             }
             
             bar.style.width = stat_val * mp + "px";
+            if(stat_val > 222){
+                bar.style.width = "222px";
+            }
             val.textContent = stat_val;
         }
         

@@ -9,9 +9,6 @@
     transform: translateX(-50%);
     margin-left: 0px;
 }
-#info {
-    padding-right: 0px;
-}
 #info, #info2 {
     width: 85%;
 } 
