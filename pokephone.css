@@ -15,6 +15,7 @@
 #info2 {
     transform: translateX(0px);
     position: relative;
+    padding-right: 0px;
 }
 #bar {
     width: 100%;
