@@ -51,14 +51,11 @@ function set_info(e){
             let bar = curr.childNodes.item(3);
             let val = curr.childNodes.item(5);
             let stat_val = data["stats"][i + ""]["base_stat"];
-            let mp = 1;
+            let mp = 1.5;
             
             sum += stat_val;
             
             bar.style.width = stat_val * mp + "px";
-            if(stat_val > 200){
-                bar.style.width = "200px";
-            }
             val.textContent = stat_val;
         }
         
