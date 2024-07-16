@@ -50,6 +50,9 @@
     height: 16px;
     border-top-left-radius: 0px;
 }
+.stcon {
+    margin-bottom: 10px;
+}
 .stname {
     width: 70px;
 }
