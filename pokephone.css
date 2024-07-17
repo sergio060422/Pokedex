@@ -20,9 +20,6 @@
     border-bottom-width: 1px;
     border-bottom-style: solid;
 }
-#bar {
-    width: 100%;
-}
 #textbar {
     width: 90%;
     font-size: 22px;
@@ -35,10 +32,13 @@
 .stname {
     display: block;
 }
-#start {
+#start, #textbar{
+    /*
     height: 25px;
     top: -31px;
     left: 140px;
+    */
+    display: inline-block;
 }
 #pokename {
     font-size: 32px;
