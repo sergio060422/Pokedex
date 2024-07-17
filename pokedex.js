@@ -75,16 +75,40 @@ function set_info(e){
 function set_evol_info(e){
     if(e.target.status == 200){
         let data = e.target.response;
-        let minicard = document.getElementById("minicard");
-        let pstevo = document.getElementById("pstevo");
-        let evo = document.getElementById("evo");
-        let evoname = document.getElementById("evoname");
+        let pstevocon = document.getElementById("pstevocon");
         
-        minicard.style.display = "block";
+        for(let i = pstevocon.childElementCount - 1; i >= 0; i--){
+            let element = pstevocon.children.item(i);
+            pstevocon.removeChild(element);        
+        }
+        
+        let card = document.createElement("div");
+        card.className = "minicard";
+        card.id = "minicard";
+        pstevocon.appendChild(card);
+
+        let evoname = document.createElement("label");
+        evoname.className = "evoname";
+        evoname.id = "evoname"
+        card.appendChild(evoname);
+
+        let evo = document.createElement("img");
+        evo.className = "evo";
+        evo.id = "evo";
+        evo.height = "140px";
+        card.appendChild(evo);        
+        
+        function fun(){
+            let textbar = document.getElementById("textbar");
+            textbar.value = data["name"];
+            get_poke();
+            get_evol();
+        }
+        
+        card.addEventListener("click", fun);
         pstevo.style.display = "block";
         evo.src = data["sprites"]["front_default"];
         evoname.textContent = data["name"][0].toUpperCase() + data["name"].substr(1, data["name"].length);
-        
     }
 }
 
@@ -135,6 +159,12 @@ function get_evol_chain(e){
                         evo.src = data3["sprites"]["front_default"];
                         evoname.textContent = data3["name"][0].toUpperCase() + data3["name"].substr(1, data3["name"].length);
                         nxtevo.style.display = "block";
+                        card.addEventListener("click", function (){
+                            let textbar = document.getElementById("textbar");
+                            textbar.value = data3["name"];
+                            get_poke();
+                            get_evol();
+                        });
                     }
                 }
             }
@@ -178,6 +208,12 @@ function get_evol_chain(e){
                                  evo.src = data3["sprites"]["front_default"];
                                  evoname.textContent = data3["name"][0].toUpperCase() + data3["name"].substr(1, data3["name"].length);
                                  nxtevo.style.display = "block";
+                                 card.addEventListener("click", function (){
+                                    let textbar = document.getElementById("textbar");
+                                    textbar.value = data3["name"];
+                                    get_poke();
+                                    get_evol();
+                                });
                              }
                          }
                      }
@@ -255,8 +291,6 @@ function pika_pika(){
     get_poke();
     get_evol();
 }
-
-
 
 
 window.addEventListener("load", add_fun);

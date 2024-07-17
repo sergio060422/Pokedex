@@ -194,7 +194,7 @@ body {
     border-radius: 20px;
     border-style: solid;
     margin: 20px 10px 20px 0px;
-    
+    cursor: pointer;
 }
 .evo {
     height: 140px;
