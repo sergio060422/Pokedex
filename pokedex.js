@@ -1,4 +1,4 @@
-let name = "";
+let name = "", id = 0;
 
 function add_fun(){
     let start = document.getElementById("start");
@@ -69,25 +69,119 @@ function set_info(e){
         
         let tot = document.getElementById("tot");
         tot.textContent = "Total: " + sum;
-        
-       
     }
-    
-   
 }
 
 function set_evol_info(e){
     if(e.target.status == 200){
         let data = e.target.response;
-        let evolcon = document.getElementById("evolcon");
+        let minicard = document.getElementById("minicard");
+        let pstevo = document.getElementById("pstevo");
         let evo = document.getElementById("evo");
         let evoname = document.getElementById("evoname");
-        console.log(data);
         
-        evolcon.style.display = "block";
+        minicard.style.display = "block";
+        pstevo.style.display = "block";
         evo.src = data["sprites"]["front_default"];
         evoname.textContent = data["name"][0].toUpperCase() + data["name"].substr(1, data["name"].length);
         
+    }
+}
+
+function get_evol_chain(e){
+    if(e.target.status == 200){
+        let data = e.target.response;
+    
+        console.log(data);
+        
+        let nxtevocon = document.getElementById("nxtevocon");
+        
+        for(let i = nxtevocon.childElementCount - 1; i >= 0; i--){
+            let element = nxtevocon.children.item(i);
+            nxtevocon.removeChild(element);        
+        }
+        
+        if(data["chain"]["species"]["name"] == name){
+            let data2 = data["chain"]["evolves_to"];
+            
+            for(let i = 0; i < data2.length; i++){
+                let card = document.createElement("div");
+                card.className = "minicard";
+                card.id = "minicard" + id;
+                nxtevocon.appendChild(card);
+
+                let evoname = document.createElement("label");
+                evoname.className = "evoname";
+                evoname.id = "evoname" + id;
+                card.appendChild(evoname);
+
+                let evo = document.createElement("img");
+                evo.className = "evo";
+                evo.id = "evo" + id;
+                evo.height = "150px";
+                card.appendChild(evo);
+                
+                let lk = "https://pokeapi.co/api/v2/pokemon/" + data2[i + ""]["species"]["name"];
+                let res = new XMLHttpRequest();
+                res.responseType = "json";
+                res.open("GET", lk, true);
+                res.send(null);
+                
+                id++;
+                
+                res.onload = function (e){
+                    if(e.target.status == 200){
+                        let data3 = e.target.response;
+                        evo.src = data3["sprites"]["front_default"];
+                        evoname.textContent = data3["name"][0].toUpperCase() + data3["name"].substr(1, data3["name"].length);
+                    }
+                }
+            }
+        }
+        else{
+            let data4 = data["chain"]["evolves_to"];
+            
+            for(let i = 0; i < data4.length; i++){
+                if(data4[i + ""]["species"]["name"] == name){
+                     let data2 = data4[i + ""]["evolves_to"];
+            
+                     for(let i = 0; i < data2.length; i++){
+                         let card = document.createElement("div");
+                         card.className = "minicard";
+                         card.id = "minicard" + id;
+                         nxtevocon.appendChild(card);
+
+                         let evoname = document.createElement("label");
+                         evoname.className = "evoname";
+                         evoname.id = "evoname" + id;
+                         card.appendChild(evoname);
+
+                         let evo = document.createElement("img");
+                         evo.className = "evo";
+                         evo.id = "evo" + id;
+                         evo.height = "150px";
+                         card.appendChild(evo);
+
+                         let lk = "https://pokeapi.co/api/v2/pokemon/" + data2[i + ""]["species"]["name"];
+                         let res = new XMLHttpRequest();
+                         res.responseType = "json";
+                         res.open("GET", lk, true);
+                         res.send(null);
+
+                         id++;
+
+                         res.onload = function (e){
+                             if(e.target.status == 200){
+                                 let data3 = e.target.response;
+                                 evo.src = data3["sprites"]["front_default"];
+                                 evoname.textContent = data3["name"][0].toUpperCase() + data3["name"].substr(1, data3["name"].length);
+                             }
+                         }
+                     }
+                }
+            }
+        }
+           
     }
 }
 
@@ -106,9 +200,18 @@ function set_evol(e){
             res.send(null);           
         }
         else {
-            let evolcon = document.getElementById("evolcon");
-            evolcon.style.display = "none";
+            let minicard = document.getElementById("minicard");
+            let pstevo = document.getElementById("pstevo");
+            minicard.style.display = "none";
+            pstevo.style.display = "none";
         }
+        
+        let lk = data["evolution_chain"]["url"];
+        let res = new XMLHttpRequest();
+        res.addEventListener("load", get_evol_chain);
+        res.responseType = "json";
+        res.open("GET", lk, true);
+        res.send(null);
     }
 }
 
@@ -148,6 +251,7 @@ function pika_pika(){
     let textbar = document.getElementById("textbar");
     textbar.value = "bulbasaur";
     get_poke();
+    get_evol();
 }
 
 
