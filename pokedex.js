@@ -118,7 +118,7 @@ function get_evol_chain(e){
                 let evo = document.createElement("img");
                 evo.className = "evo";
                 evo.id = "evo" + id;
-                evo.height = "150px";
+                evo.height = "120px";
                 card.appendChild(evo);
                 
                 let lk = "https://pokeapi.co/api/v2/pokemon/" + data2[i + ""]["species"]["name"];
@@ -161,7 +161,7 @@ function get_evol_chain(e){
                          let evo = document.createElement("img");
                          evo.className = "evo";
                          evo.id = "evo" + id;
-                         evo.height = "150px";
+                         evo.height = "120px";
                          card.appendChild(evo);
 
                          let lk = "https://pokeapi.co/api/v2/pokemon/" + data2[i + ""]["species"]["name"];
