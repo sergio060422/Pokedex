@@ -181,8 +181,8 @@ body {
     font-size: 28px;
     text-shadow: 2px 2px 5px steelblue;
 }
-#evolcon {
-    
+#nxtevocon {
+    margin-bottom: 15px;
 }
 .minicard {
     width: fit-content;
@@ -206,7 +206,6 @@ body {
     text-shadow: 2px 2px 5px steelblue;
     position: relative;
     top: 10px;
-    
 }
 #pstevo {
     display: block;
