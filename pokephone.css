@@ -9,11 +9,6 @@
     transform: translateX(-50%);
     margin-left: 0px;
 }
-#bar {
-    width: 100%;
-    text-align: center;
-    background-color: red;
-}
 #info, #info2 {
     width: 85%;
 } 
@@ -30,7 +25,6 @@
     font-size: 22px;
     padding-top: 5px;
     padding-bottom: 5px;
-    position: relative;
 }
 .stname, .val {
     top: 6px;  
@@ -38,12 +32,10 @@
 .stname {
     display: block;
 }
-#start, #textbar{
-    display: inline-block;
-}
 #start {
     height: 25px;
-    float: right;
+    top: -31px;
+    left: 140px;
 }
 #pokename {
     font-size: 32px;
