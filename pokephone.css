@@ -11,6 +11,8 @@
 }
 #bar {
     width: 100%;
+    text-align: center;
+    background-color: red;
 }
 #info, #info2 {
     width: 85%;
@@ -29,7 +31,6 @@
     padding-top: 5px;
     padding-bottom: 5px;
     position: relative;
-    transform: translateX(5%);
 }
 .stname, .val {
     top: 6px;  
@@ -41,7 +42,7 @@
     display: inline-block;
 }
 #start {
-    height: 23px;
+    height: 25px;
 }
 #pokename {
     font-size: 32px;
