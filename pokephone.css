@@ -43,6 +43,7 @@
 }
 #start {
     height: 25px;
+    float: right;
 }
 #pokename {
     font-size: 32px;
