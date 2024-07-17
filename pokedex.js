@@ -91,10 +91,9 @@ function set_evol_info(e){
 function get_evol_chain(e){
     if(e.target.status == 200){
         let data = e.target.response;
-    
-        console.log(data);
-        
+        let nxtevo = document.getElementById("nxtevo");
         let nxtevocon = document.getElementById("nxtevocon");
+        nxtevo.style.display = "none";
         
         for(let i = nxtevocon.childElementCount - 1; i >= 0; i--){
             let element = nxtevocon.children.item(i);
@@ -134,6 +133,7 @@ function get_evol_chain(e){
                         let data3 = e.target.response;
                         evo.src = data3["sprites"]["front_default"];
                         evoname.textContent = data3["name"][0].toUpperCase() + data3["name"].substr(1, data3["name"].length);
+                        nxtevo.style.display = "block";
                     }
                 }
             }
@@ -175,13 +175,13 @@ function get_evol_chain(e){
                                  let data3 = e.target.response;
                                  evo.src = data3["sprites"]["front_default"];
                                  evoname.textContent = data3["name"][0].toUpperCase() + data3["name"].substr(1, data3["name"].length);
+                                 nxtevo.style.display = "block";
                              }
                          }
                      }
                 }
             }
         }
-           
     }
 }
 
