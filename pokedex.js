@@ -107,6 +107,7 @@ function get_evol_chain(e){
                 let card = document.createElement("div");
                 card.className = "minicard";
                 card.id = "minicard" + id;
+                card.style.display = "inline-block";
                 nxtevocon.appendChild(card);
 
                 let evoname = document.createElement("label");
@@ -149,6 +150,7 @@ function get_evol_chain(e){
                          let card = document.createElement("div");
                          card.className = "minicard";
                          card.id = "minicard" + id;
+                         card.style.display = "inline-block";
                          nxtevocon.appendChild(card);
 
                          let evoname = document.createElement("label");
