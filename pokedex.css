@@ -39,6 +39,8 @@ body {
     overflow-x: hidden;
     background-color: #eff1f2;
     background-image: linear-gradient(180deg, #eff1f2 0%, #2f9de2 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #main {
     border-style: solid;
@@ -89,24 +91,11 @@ body {
 #info, #info2 {
     display: inline-block;
     padding: 20px;
-    /*
-    border-width: 1px;
-    border-radius: 20px;
-    border-style: solid;
-    */
     margin: 10px;
     width: 45%;
     margin-top: 0px;
     height: 420px;
     position: relative;
-    /*
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-image: url(Images/background6.jpg);
-    
-*/
-
 }
 
 #bstat {
