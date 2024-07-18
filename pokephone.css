@@ -41,8 +41,8 @@
     font-size: 32px;
 }
 #sprite {
-    width: 200px;
-    height: 280px;
+    width: 150px;
+    height: auto;
 }
 .stname, .val{
     font-size: 16px;
