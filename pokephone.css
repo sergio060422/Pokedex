@@ -16,9 +16,9 @@
     transform: translateX(0px);
     position: relative;
 }
-#info {
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
+#info, #info2 {
+    border-top-width: 1px;
+    border-top-style: solid;
 }
 #textbar {
     width: 90%;
@@ -41,7 +41,7 @@
     font-size: 32px;
 }
 #sprite {
-    width: 150px;
+    width: 200px;
     height: auto;
 }
 .stname, .val{
