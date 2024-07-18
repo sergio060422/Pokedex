@@ -230,12 +230,28 @@ function set_evol(e){
         
         if(evol != null){
             let name = evol["name"];
-            let lk = "https://pokeapi.co/api/v2/pokemon/" + name;
-            let res = new XMLHttpRequest();
-            res.addEventListener("load", set_evol_info);
-            res.responseType = "json";
-            res.open("GET", lk, true);
-            res.send(null);           
+            
+            if(name.length){
+                let id;
+                let url = "https://pokeapi.co/api/v2/pokemon-species/" + name;
+                let req = new XMLHttpRequest();
+                req.responseType = "json";
+                req.open("GET", url, true);
+                req.send(null);
+
+                req.onload = function (e){
+                    if(e.target.status){
+                        let data = e.target.response;
+                        id = data["id"];
+                        let lk = "https://pokeapi.co/api/v2/pokemon/" + id;
+                        let res = new XMLHttpRequest();
+                        res.addEventListener("load", set_evol_info);
+                        res.responseType = "json";
+                        res.open("GET", lk, true);
+                        res.send(null);     
+                    }
+                }
+            }     
         }
         else {
             let minicard = document.getElementById("minicard");
@@ -276,13 +292,26 @@ function get_poke(){
     name = name.toLowerCase();
     
     if(name.length){
-        let lk = "https://pokeapi.co/api/v2/pokemon/" + name;
-        let res = new XMLHttpRequest();
-        res.addEventListener("load", set_info);
-        res.responseType = "json";
-        res.open("GET", lk, true);
-        res.send(null);
-    }
+        let id;
+        let url = "https://pokeapi.co/api/v2/pokemon-species/" + name;
+        let req = new XMLHttpRequest();
+        req.responseType = "json";
+        req.open("GET", url, true);
+        req.send(null);
+
+        req.onload = function (e){
+            if(e.target.status){
+                let data = e.target.response;
+                id = data["id"];
+                let lk = "https://pokeapi.co/api/v2/pokemon/" + id;
+                let res = new XMLHttpRequest();
+                res.addEventListener("load", set_info);
+                res.responseType = "json";
+                res.open("GET", lk, true);
+                res.send(null);     
+            }
+        }
+    } 
 }
 
 function pika_pika(){
@@ -290,6 +319,8 @@ function pika_pika(){
     textbar.value = "bulbasaur";
     get_poke();
     get_evol();
+    
+   
 }
 
 
