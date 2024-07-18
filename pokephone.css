@@ -8,6 +8,8 @@
     left: 50%;
     transform: translateX(-50%);
     margin-left: 0px;
+    margin-bottom: 20px;
+    height: 360px;
 }
 #info, #info2 {
     width: 85%;
