@@ -45,10 +45,14 @@ function set_info(e){
             sectype.style.display = "none";    
         }
         
-        let sum = 0;
+        let sum = 0, indx;
         
         for(let i = 0; i <= 5; i++){
-            let curr = document.getElementById(i + "");
+            indx = i + "";
+            if(i == 0){
+                indx = "hpcon";
+            }
+            let curr = document.getElementById(indx);
             let bar = curr.childNodes.item(3);
             let val = curr.childNodes.item(5);
             let stat_val = data["stats"][i + ""]["base_stat"];

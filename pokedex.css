@@ -35,10 +35,12 @@ body {
     padding-left: 5px;
     cursor: pointer;
 }
+/*
 #globalcon {
     background-color: #FFFFFF;
     background-image: linear-gradient(180deg, #FFFFFF 0%, #2abee2 50%, #ffffff 100%);
 }
+*/
 #main {
     border-style: solid;
     border-width: 1px;
@@ -105,7 +107,6 @@ body {
 }
 .stcon {
     height: 40px;
-    margin-top: 10px;
 }
 .stname, .bar, .val {
     display: inline-block;
@@ -206,4 +207,29 @@ body {
 }
 #pstevo {
     margin-bottom: 15px;
+}
+@font-face {
+    font-family: mf;
+    src: url(Fonts/Roboto_Condensed/static/RobotoCondensed-Light.ttf);
+}
+@font-face {
+    font-family: mf_bold;
+    src: url(Fonts/Roboto_Condensed/static/RobotoCondensed-Bold.ttf);
+}
+*{
+   font-family: mf;
+}
+#char, #tot, #bstat, #pstevo, #nxtevo {
+   font-weight: bold;
+}
+.stcon{
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.5);
+    border-bottom-width: 1px;
+}
+#hpcon {
+    border-top-style: solid;
+    border-top-color: rgba(0, 0, 0, 0.5);
+    border-top-width: 1px;
+    margin-top: 15px;
 }
