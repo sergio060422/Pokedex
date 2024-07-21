@@ -87,5 +87,11 @@
     width: 100%;
 }
 .stcon {
-    width: 120%;
+    width: 100%;
+}
+#info {
+    height: auto;
+}
+#bstat {
+    margin-bottom: 30px;
 }
