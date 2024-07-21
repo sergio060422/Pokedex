@@ -30,7 +30,7 @@
     padding-top: 4px;
     padding-bottom: 4px;
     position: relative;
-    transform: translateX(19px);
+    transform: translateX(14px);
 }
 .stname, .val {
     top: 6px;  
@@ -39,9 +39,10 @@
     display: block;
 }
 #start {
-    width: 28px;
+    height: 23px;
+    width: 23px;
     top: 6px;
-    left: -35px;
+    left: 0px;
 }
 #pokename {
     font-size: 30px;
