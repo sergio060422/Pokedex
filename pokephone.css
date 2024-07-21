@@ -83,7 +83,7 @@
 #cry {
     transform: translateY(25px);
 }
-#stat {
+.stcon {
     width: 120%;
 }
 #info {
