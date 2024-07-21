@@ -58,7 +58,7 @@
 }
 .bar {
     height: 16px;
-    margin-left: 15px;
+    margin-left: 20px;
 }
 .stcon {
     margin-bottom: 10px;
@@ -86,12 +86,9 @@
 #stat {
     width: 100%;
 }
-.stcon {
-    width: 100%;
-}
 #info {
     height: auto;
 }
 #bstat {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }

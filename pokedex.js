@@ -45,26 +45,32 @@ function set_info(e){
             sectype.style.display = "none";    
         }
         
-        let sum = 0;
+        let sum = 0, flag = 0;
         
         for(let i = 0; i <= 5; i++){
             let curr = document.getElementById(i + "");
             let bar = curr.childNodes.item(3);
             let val = curr.childNodes.item(5);
             let stat_val = data["stats"][i + ""]["base_stat"];
-            let mp = 1.2;
+            let mp = 1;
             
             sum += stat_val;
-            
-            if(stat_val > 222){
-                mp = 1;
-            }
-            
+        
             bar.style.width = stat_val * mp + "px";
-            if(stat_val > 240){
-                bar.style.width = "240px";
-            }
             val.textContent = stat_val;
+            
+            if(stat_val > 200){
+                flag = 1;
+            }
+        }
+        
+        let element = document.getElementById("1");
+        
+        if(flag){
+            element.width = "120%";
+        }
+        else{
+            element.width = "100%";
         }
         
         let tot = document.getElementById("tot");
@@ -322,7 +328,6 @@ function pika_pika(){
     
    
 }
-
 
 window.addEventListener("load", add_fun);
 window.addEventListener("load", pika_pika);
