@@ -239,9 +239,13 @@ body {
 }
 #wg, #hg {
     position: relative;
+    top: 1px;
 }
-#nxtevo, #pstevo {
+#nxtevo, #pstevo, #char {
     border-bottom-style: solid;
     border-bottom-color: rgba(0, 0, 0, 0.5);
     border-bottom-width: 1px;
+}
+#char {
+    display: block;
 }

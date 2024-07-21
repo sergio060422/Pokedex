@@ -75,7 +75,7 @@
 #aud {
     width: 250px;
     position: relative;
-    transform: translateY(8px);
+    transform: translateY(7px);
 }
 #cry {
     transform: translateY(25px);
