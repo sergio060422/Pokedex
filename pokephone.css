@@ -84,13 +84,15 @@
     transform: translateY(25px);
 }
 .stcon {
-    overflow-x: scroll;
     width: 120%;
 }
 #info {
     height: auto;
-    overflow: scroll;
+    overflow-x: scroll;
 }
 #bstat {
     margin-bottom: 0px;
+}
+#tot {
+    top: 10px;
 }
