@@ -123,6 +123,9 @@ body {
 .stname, .val {
     top: 5px;
 }
+.stname {
+    left: 10px;
+}
 #hp {
     background-color: limegreen;
 }
@@ -162,7 +165,6 @@ body {
 }
 #cry, #aud {
     display: flex;
-   
 }
 #cry {
     width: fit-content;

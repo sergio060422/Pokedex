@@ -77,16 +77,19 @@ function set_info(e){
             }
         }
         
+        let stcon = document.getElementsByClassName("stcon");
+        let info2 = document.getElementById("info2");
+        
         if(flag){
+            info2.style.transform = "translateX(20%)";
             for(let i = 0; i <= 5; i++){
-                let curr = document.getElementById(i + "");
-                curr.style.width = "120%";
+                stcon.item(i).style.width = "120%";
             }
         }
         else{
+            info2.style.transform = "translateX(-10px)";
             for(let i = 0; i <= 5; i++){
-                let curr = document.getElementById(i + "");
-                curr.style.width = "100%";
+                stcon.item(i).style.width = "100%";
             }
         }
         
