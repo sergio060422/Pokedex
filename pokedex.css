@@ -212,3 +212,6 @@ body {
 #pstevo {
     margin-bottom: 15px;
 }
+#info {
+    overflow-x: scroll;
+}

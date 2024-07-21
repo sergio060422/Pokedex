@@ -12,9 +12,6 @@
 }
 #bar {
     overflow-x: scroll;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-bottom-color: gray;
 }
 #info, #info2 {
     width: 85%;
@@ -40,9 +37,6 @@
 }
 .stname, .val {
     top: 6px;  
-}
-.stname {
-    display: block;
 }
 #start {
     height: 23px;
