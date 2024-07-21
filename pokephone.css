@@ -86,3 +86,6 @@
 #stat {
     width: 100%;
 }
+.stcon {
+    overflow: scroll;
+}
