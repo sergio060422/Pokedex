@@ -74,7 +74,6 @@ body {
 #pokename {
     font-size: 36px;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 5px steelblue;
     background-color: rgba(42, 157, 226, 0.8);
     padding: 5px 10px 5px 10px;
     border-style: solid;
@@ -97,7 +96,10 @@ body {
 
 #bstat {
     font-size: 30px;
-    text-shadow: 2px 2px 5px steelblue;
+    display: block;
+    margin-left: 30px;
+    position: relative;
+    top: 10px;
 }
 .stname {
     width: 85px;  
@@ -107,7 +109,10 @@ body {
 }
 .stcon {
     height: 40px;
-    margin-top: 10px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: gray;
+    
 }
 .stname, .bar, .val {
     display: inline-block;
@@ -134,7 +139,6 @@ body {
     font-size: 24px;
     position: relative;
     top: 16px;
-    text-shadow: 2px 2px 5px steelblue;
 }
 #def {
     background-color: blue;
@@ -178,7 +182,6 @@ body {
 }
 #char, #pstevo, #nxtevo {
     font-size: 28px;
-    text-shadow: 2px 2px 5px steelblue;
 }
 #nxtevocon {
     padding-bottom: 15px;
@@ -202,7 +205,6 @@ body {
 }
 .evoname {
     font-size: 24px;
-    text-shadow: 2px 2px 5px steelblue;
     position: relative;
     top: 10px;
 }
@@ -212,6 +214,8 @@ body {
 #pstevo {
     margin-bottom: 15px;
 }
-#info {
-    overflow-x: scroll;
+#sp {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: gray;
 }

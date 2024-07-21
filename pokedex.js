@@ -45,10 +45,14 @@ function set_info(e){
             sectype.style.display = "none";    
         }
         
-        let sum = 0, flag = 0;
+        let sum = 0;
         
         for(let i = 0; i <= 5; i++){
-            let curr = document.getElementById(i + "");
+            let indx = i + "";
+            if(i == 5){
+                indx = "sp";
+            }
+            let curr = document.getElementById(indx);
             let bar = curr.childNodes.item(3);
             let val = curr.childNodes.item(5);
             let stat_val = data["stats"][i + ""]["base_stat"];
@@ -58,19 +62,6 @@ function set_info(e){
         
             bar.style.width = stat_val * mp + "px";
             val.textContent = stat_val;
-            
-            if(stat_val > 200){
-                flag = 1;
-            }
-        }
-        
-        let element = document.getElementById("1");
-        
-        if(flag){
-            element.width = "120%";
-        }
-        else{
-            element.width = "100%";
         }
         
         let tot = document.getElementById("tot");
