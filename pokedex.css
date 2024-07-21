@@ -151,7 +151,7 @@ body {
 }
 #info2 {
     position: absolute;
-    transform: translateX(20%);
+
 }
 #audpanel {
     height: 80px;
@@ -159,7 +159,7 @@ body {
 }
 #aud {
     position: relative;
-    left: 60px;
+    left: 50px;
     height: 30px;
     bottom: 8px;
 }
@@ -249,4 +249,11 @@ body {
 }
 .evoname, #pokename {
     font-family: serif;
+}
+#info2 {
+    width: fit-content;
+    transform: translateX(20%);
+}
+.stcon {
+    width: 120%;
 }
