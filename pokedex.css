@@ -219,7 +219,7 @@ body {
 *{
    font-family: mf;
 }
-#char, #tot, #bstat, #pstevo, #nxtevo {
+#char, #tot, #bstat, #pstevo, #nxtevo, #Wg, #Hg, #cry {
    font-weight: bold;
 }
 .stcon{
@@ -232,4 +232,17 @@ body {
     border-top-color: rgba(0, 0, 0, 0.5);
     border-top-width: 1px;
     margin-top: 15px;
+}
+#wg, #hg, #Wg, #Hg {
+    font-size: 24px;
+    display: inline-block;
+}
+#wg, #hg {
+    position: relative;
+    top: 1px;
+}
+#nxtevo, #pstevo {
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.5);
+    border-bottom-width: 1px;
 }
