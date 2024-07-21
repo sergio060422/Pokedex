@@ -2,8 +2,8 @@ body {
     margin: 0px;
     padding: 0px;
 }
-#bar {
-   text-align: center;
+#bar:nth-child(1) {
+    text-align: center;
 }
 #textbar {
     font-size: 22px;
