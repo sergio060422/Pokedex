@@ -48,11 +48,7 @@ function set_info(e){
         let sum = 0;
         
         for(let i = 0; i <= 5; i++){
-            let indx = i + "";
-            if(i == 5){
-                indx = "sp";
-            }
-            let curr = document.getElementById(indx);
+            let curr = document.getElementById(i + "");
             let bar = curr.childNodes.item(3);
             let val = curr.childNodes.item(5);
             let stat_val = data["stats"][i + ""]["base_stat"];
