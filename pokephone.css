@@ -61,7 +61,7 @@
     margin-left: 15px;
 }
 .stcon {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .stname {
     width: 50px;
@@ -87,5 +87,5 @@
     width: 100%;
 }
 .stcon {
-    overflow: scroll;
+    width: 120%;
 }
