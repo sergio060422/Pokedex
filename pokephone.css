@@ -58,7 +58,7 @@
 }
 .bar {
     height: 16px;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 .stcon {
     margin-bottom: 15px;
@@ -84,5 +84,6 @@
     transform: translateY(25px);
 }
 #stat {
-    overflow: scroll;
+    width: 100%;
+    overflow-x: scroll;
 }
