@@ -84,11 +84,18 @@
     transform: translateY(25px);
 }
 #stat {
-    width: 120%;
+    overflow-x: hidden;
+    
 }
 #info {
     height: auto;
 }
-#bstat {
-    margin-bottom: 40px;
+#0 {
+    margin-top: 20px;
+}
+#5 {
+    margin-bottom: 20px;
+}
+#tot {
+    top: 0px;
 }
