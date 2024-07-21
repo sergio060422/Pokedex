@@ -78,16 +78,13 @@ function set_info(e){
         }
         
         let stcon = document.getElementsByClassName("stcon");
-        let info2 = document.getElementById("info2");
         
         if(flag){
-            info2.style.transform = "translateX(20%)";
             for(let i = 0; i <= 5; i++){
                 stcon.item(i).style.width = "120%";
             }
         }
         else{
-            info2.style.transform = "translateX(-10px)";
             for(let i = 0; i <= 5; i++){
                 stcon.item(i).style.width = "100%";
             }

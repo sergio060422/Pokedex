@@ -151,7 +151,7 @@ body {
 }
 #info2 {
     position: absolute;
-    transform: translateX(-10px);
+    transform: translateX(20%);
 }
 #audpanel {
     height: 80px;
@@ -228,6 +228,7 @@ body {
     border-bottom-style: solid;
     border-bottom-color: rgba(0, 0, 0, 0.5);
     border-bottom-width: 1px;
+    width: 120%;
 }
 #hpcon {
     border-top-style: solid;
