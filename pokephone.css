@@ -9,6 +9,9 @@
     transform: translateX(-50%);
     margin-left: 0px;
     margin-bottom: 30px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: gray;
 }
 #bar {
     overflow-x: scroll;
@@ -33,7 +36,7 @@
     transform: translateX(16px);
 }
 #bar {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .stname, .val {
     top: 6px;  
@@ -45,7 +48,7 @@
     height: 23px;
     width: 23px;
     top: 6px;
-    left: -26px;
+    left: -28px;
 }
 #pokename {
     font-size: 30px;
