@@ -15,19 +15,24 @@ function set_info(e){
         let main = document.getElementById("main");
         let infocon = document.getElementById("infocon");
         let pokename = document.getElementById("pokename");
-        let lk = data["sprites"]["other"]["dream_world"]["front_default"];
+        let lk = "https://img.pokemondb.net/artwork/vector/"+ name.trim() + ".png";
         let poketype = data["types"]["0"]["type"]["name"];
         let aud = document.getElementById("aud");
         let hg = document.getElementById("hg");
         let wg = document.getElementById("wg");
         
-        if(lk == null){
-            lk = data["sprites"]["front_default"];
-        }
-        
         infocon.style.display = "block";
         main.style.display = "block";
-        sprite.src = "https://img.pokemondb.net/artwork/vector/"+ name.trim() + ".png";
+        sprite.src = lk;
+        sprite.onerror = function (){
+            let lk2 = data["sprites"]["other"]["dream_world"]["front_default"];
+            
+            if(lk2 == null){
+                lk2 = data["sprites"]["front_default"];
+            }
+            
+            sprite.src = lk2;
+        }
         maintype.src = "Types/"+poketype+".png"; 
         pokename.textContent = name[0].toUpperCase() + name.substr(1, name.length);
         aud.src = data["cries"]["latest"];
@@ -45,7 +50,7 @@ function set_info(e){
             sectype.style.display = "none";    
         }
         
-        let sum = 0, indx;
+        let sum = 0, indx, flag = 0;
         
         for(let i = 0; i <= 5; i++){
             indx = i + "";
@@ -63,8 +68,25 @@ function set_info(e){
             bar.style.width = stat_val * mp + "px";
             val.textContent = stat_val;
             
+            if(stat_val > 200){
+                flag = 1;
+            }
+            
             if(i % 2){
                 curr.style.backgroundColor = "rgba(0, 0, 0, 0.05)";
+            }
+        }
+        
+        if(flag){
+            for(let i = 0; i <= 5; i++){
+                let curr = document.getElementById(i + "");
+                curr.style.width = "120%";
+            }
+        }
+        else{
+            for(let i = 0; i <= 5; i++){
+                let curr = document.getElementById(i + "");
+                curr.style.width = "100%";
             }
         }
         

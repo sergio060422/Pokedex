@@ -80,9 +80,6 @@
 #cry {
     transform: translateY(25px);
 }
-.stcon {
-    width: 120%;
-}
 #info {
     height: auto;
     overflow-x: scroll;
@@ -94,7 +91,5 @@
     top: 15px;
     margin-bottom: 15px;
 }
-#wg, #hg {
-    top: 0px;
-}
+
 
