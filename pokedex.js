@@ -27,7 +27,7 @@ function set_info(e){
         
         infocon.style.display = "block";
         main.style.display = "block";
-        sprite.src = "https://img.pokemondb.net/artwork/vector/"+ name + ".png";
+        sprite.src = "https://img.pokemondb.net/artwork/vector/"+ name.trim() + ".png";
         maintype.src = "Types/"+poketype+".png"; 
         pokename.textContent = name[0].toUpperCase() + name.substr(1, name.length);
         aud.src = data["cries"]["latest"];
