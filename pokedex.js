@@ -31,8 +31,8 @@ function set_info(e){
         maintype.src = "Types/"+poketype+".png"; 
         pokename.textContent = name[0].toUpperCase() + name.substr(1, name.length);
         aud.src = data["cries"]["latest"];
-        hg.textContent = "Height: " + data["height"] * 10 + "cm";
-        wg.textContent = "Weight: " + data["weight"] / 10 + "kg";
+        hg.textContent = " " + data["height"] * 10 + "cm";
+        wg.textContent = " " + data["weight"] / 10 + "kg";
         
         if(data["types"].length == 2){
             let poketype2 = data["types"]["1"]["type"]["name"];
@@ -62,6 +62,7 @@ function set_info(e){
         
             bar.style.width = stat_val * mp + "px";
             val.textContent = stat_val;
+            
         }
         
         let tot = document.getElementById("tot");

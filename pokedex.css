@@ -239,7 +239,6 @@ body {
 }
 #wg, #hg {
     position: relative;
-    top: 1px;
 }
 #nxtevo, #pstevo {
     border-bottom-style: solid;
