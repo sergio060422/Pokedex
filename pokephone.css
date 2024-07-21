@@ -32,6 +32,9 @@
     position: relative;
     transform: translateX(16px);
 }
+#bar {
+    margin-bottom: 20px;
+}
 .stname, .val {
     top: 6px;  
 }
@@ -42,7 +45,7 @@
     height: 23px;
     width: 23px;
     top: 6px;
-    left: -24px;
+    left: -26px;
 }
 #pokename {
     font-size: 30px;
