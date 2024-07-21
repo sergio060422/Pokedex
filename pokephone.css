@@ -10,9 +10,6 @@
     margin-left: 0px;
     margin-bottom: 30px;
 }
-#bar {
-    background-color: red;
-}
 #info, #info2 {
     width: 85%;
 } 
@@ -25,7 +22,7 @@
     border-top-style: solid;
 }
 #textbar {
-    width: 60%;
+    width: 90%;
     font-size: 22px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -38,6 +35,8 @@
 }
 #start {
     height: 25px;
+    top: 8px;
+    left: -40px;
 }
 #pokename {
     font-size: 30px;
