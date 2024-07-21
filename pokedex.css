@@ -119,6 +119,7 @@ body {
     border-width: 1px;
     border-radius: 5px;
     top: 10px;
+    background-color: deepskyblue;
 }
 .stname, .val {
     top: 5px;
@@ -126,28 +127,10 @@ body {
 .stname {
     left: 10px;
 }
-#hp {
-    background-color: limegreen;
-}
-#at {
-    background-color: red;
-}
 #tot {
     font-size: 24px;
     position: relative;
     top: 16px;
-}
-#def {
-    background-color: blue;
-}
-#sp-at {
-    background-color: darkviolet;
-}
-#sp-def {
-    background-color: violet;
-}
-#speed {
-    background-color: yellow;
 }
 #info2 {
     position: absolute;

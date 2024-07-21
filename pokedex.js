@@ -74,6 +74,7 @@ function set_info(e){
             
             if(i % 2){
                 curr.style.backgroundColor = "rgba(0, 0, 0, 0.05)";
+                bar.style.backgroundColor = "blue";
             }
         }
         
