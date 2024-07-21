@@ -63,6 +63,9 @@ function set_info(e){
             bar.style.width = stat_val * mp + "px";
             val.textContent = stat_val;
             
+            if(i % 2){
+                curr.style.backgroundColor = "rgba(0, 0, 0, 0.05)";
+            }
         }
         
         let tot = document.getElementById("tot");
