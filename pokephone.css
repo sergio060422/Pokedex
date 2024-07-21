@@ -65,7 +65,7 @@
     margin-bottom: 15px;
 }
 .stname {
-    width: 70px;
+    width: 60px;
 }
 #logo {
     height: 60px;
@@ -83,4 +83,7 @@
 }
 #cry {
     transform: translateY(25px);
+}
+#stat {
+    overflow: scroll;
 }
