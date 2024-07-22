@@ -251,6 +251,19 @@ function set_evol(e){
     if(e.target.status == 200){
         let data = e.target.response;
         let evol = data["evolves_from_species"];
+        let islg = document.getElementById("islg");
+        let pokename = document.getElementById("pokename");
+
+        if(data["is_legendary"]){
+            islg.textContent = "Yes";
+            pokename.style.color = "gold";
+            pokename.style.textShadow = "1px 1px 1px black";
+        }
+        else{
+            islg.textContent = "No";
+            pokename.style.color = "black";
+            pokename.style.textShadow = "0px 0px 0px black";
+        }
         
         if(evol != null){
             let name = evol["name"];

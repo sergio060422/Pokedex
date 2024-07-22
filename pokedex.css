@@ -204,7 +204,7 @@ body {
 *{
    font-family: mf;
 }
-#char, #tot, #bstat, #pstevo, #nxtevo, #Wg, #Hg, #cry {
+#char, #tot, #bstat, #pstevo, #nxtevo, #Wg, #Hg, #cry, #lg, #islg, #tp {
    font-weight: bold;
 }
 .stcon{
@@ -219,13 +219,14 @@ body {
     border-top-width: 1px;
     margin-top: 15px;
 }
-#wg, #hg, #Wg, #Hg {
+#wg, #hg, #Wg, #Hg, #lg, #islg, #tp {
     font-size: 24px;
     display: inline-block;
 }
 #wg, #hg {
     position: relative;
     top: 1px;
+    left: 5px;
 }
 #char {
     display: block;
@@ -239,4 +240,21 @@ body {
 }
 .stcon {
     width: 120%;
+}
+#lg {
+    color: gold;
+    text-shadow: 1px 1px 1px black;
+}
+#lgcon {
+    transform: translateY(-16px);
+}
+#islg {
+    transform: translateY(2px);
+}
+#tp {
+    color: black;
+    transform: translateX(1px);
+}
+#islg {
+    transform: translateX(5px);
 }
