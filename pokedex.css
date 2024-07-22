@@ -256,5 +256,5 @@ body {
     transform: translateX(1px);
 }
 #islg {
-    transform: translateX(5px);
+    transform: translate(5px, 1px);
 }
