@@ -267,3 +267,9 @@ body {
 #nxtevo, #pstevo {
     margin-top: 15px;
 }
+#evolcon {
+    margin-left: 30px;
+}
+#info {
+    height: fit-content;
+}
