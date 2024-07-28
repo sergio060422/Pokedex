@@ -237,9 +237,6 @@ body {
 #char {
     display: block;
 }
-.evoname, #pokename {
-    font-family: serif;
-}
 #info2 {
     width: fit-content;
     transform: translateX(20%);
@@ -252,7 +249,7 @@ body {
     text-shadow: 1px 1px 1px black;
 }
 #lgcon {
-    transform: translateY(-12px);
+    transform: translateY(-10px);
 }
 #islg {
     transform: translateY(2px);
@@ -265,11 +262,14 @@ body {
     transform: translate(5px, 1.5px);
 }
 #nxtevo, #pstevo {
-    margin-top: 15px;
+    margin-top: 20px;
 }
 #evolcon {
     margin-left: 25px;
 }
 #info, #info2 {
     height: fit-content;
+}
+#sp, #infosp {
+    display: block;
 }
