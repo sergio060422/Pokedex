@@ -42,7 +42,7 @@
     left: -28px;
 }
 #pokename {
-    font-size: 30px;
+    font-size: 36px;
     background-color: none;
     background-color: white;
     border: none;
@@ -106,5 +106,5 @@ hr {
     margin-top: 15px;
 }
 #hd {
-    margin-bottom: 20px;
+    border-bottom-width: 20px;
 }
