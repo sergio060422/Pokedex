@@ -92,7 +92,7 @@
 #bstat {
     margin-bottom: 0px;
 }
-#tot, #lgcon {
+#tot {
     top: 15px;
     margin-bottom: 15px;
 }
@@ -107,4 +107,7 @@ hr {
 }
 #hd {
     border-bottom-width: 20px;
+}
+#lgcon {
+    margin-bottom: 10px;
 }
