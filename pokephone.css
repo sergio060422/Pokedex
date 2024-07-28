@@ -86,7 +86,7 @@
     width: 120%;
 }
 #info {
-    height: auto;
+    height: fit-content;
     overflow-x: scroll;
 }
 #bstat {

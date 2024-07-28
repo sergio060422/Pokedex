@@ -252,7 +252,7 @@ body {
     text-shadow: 1px 1px 1px black;
 }
 #lgcon {
-    transform: translateY(-15px);
+    transform: translateY(-12px);
 }
 #islg {
     transform: translateY(2px);
@@ -268,7 +268,7 @@ body {
     margin-top: 15px;
 }
 #evolcon {
-    margin-left: 30px;
+    margin-left: 25px;
 }
 #info {
     height: fit-content;
