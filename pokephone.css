@@ -3,12 +3,13 @@
     margin-left: 5px;
 }
 #main {
-    width: 260px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     margin-left: 0px;
     margin-bottom: 30px;
+    background-image: none;
+    border: none;
 }
 #bar {
     overflow-x: scroll;
@@ -48,7 +49,7 @@
     font-size: 30px;
 }
 #sprite {
-    width: 180px;
+    width: 200px;
     height: auto;
     margin-top: 20px;
     margin-bottom: 20px;
