@@ -131,6 +131,7 @@ function set_evol_info(e){
         
         card.addEventListener("click", fun);
         pstevo.style.display = "block";
+        sp.style.display = "block";
         evo.src = data["sprites"]["front_default"];
         evoname.textContent = data["name"][0].toUpperCase() + data["name"].substr(1, data["name"].length);
     }
@@ -141,7 +142,9 @@ function get_evol_chain(e){
         let data = e.target.response;
         let nxtevo = document.getElementById("nxtevo");
         let nxtevocon = document.getElementById("nxtevocon");
+        let sp = document.getElementById("sp");
         nxtevo.style.display = "none";
+        sp.style.display = "none";
         
         for(let i = nxtevocon.childElementCount - 1; i >= 0; i--){
             let element = nxtevocon.children.item(i);
@@ -183,6 +186,7 @@ function get_evol_chain(e){
                         evo.src = data3["sprites"]["front_default"];
                         evoname.textContent = data3["name"][0].toUpperCase() + data3["name"].substr(1, data3["name"].length);
                         nxtevo.style.display = "block";
+                        sp.style.display = "block";
                         card.addEventListener("click", function (){
                             let textbar = document.getElementById("textbar");
                             textbar.value = data3["name"];
@@ -232,6 +236,7 @@ function get_evol_chain(e){
                                  evo.src = data3["sprites"]["front_default"];
                                  evoname.textContent = data3["name"][0].toUpperCase() + data3["name"].substr(1, data3["name"].length);
                                  nxtevo.style.display = "block";
+                                 sp.style.display = "block";
                                  card.addEventListener("click", function (){
                                     let textbar = document.getElementById("textbar");
                                     textbar.value = data3["name"];
@@ -278,8 +283,7 @@ function set_evol(e){
 
                 req.onload = function (e){
                     if(e.target.status){
-                        let data = e.target.response;
-                        id = data["id"];
+                        let data = e.target.response;id = data["id"];
                         let lk = "https://pokeapi.co/api/v2/pokemon/" + id;
                         let res = new XMLHttpRequest();
                         res.addEventListener("load", set_evol_info);
@@ -293,6 +297,8 @@ function set_evol(e){
         else {
             let minicard = document.getElementById("minicard");
             let pstevo = document.getElementById("pstevo");
+            let sp = document.getElementById("sp");
+            sp.style.display = "none";
             minicard.style.display = "none";
             pstevo.style.display = "none";
         }
