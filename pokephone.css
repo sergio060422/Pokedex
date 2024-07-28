@@ -21,10 +21,6 @@
     transform: translateX(0px);
     position: relative;
 }
-#info, #info2 {
-    border-top-width: 1px;
-    border-top-style: solid;
-}
 #textbar {
     width: 300px;
     font-size: 20px;
@@ -47,6 +43,11 @@
 }
 #pokename {
     font-size: 30px;
+    background-color: none;
+    background-color: white;
+    border: none;
+    border-radius: 0px;
+    
 }
 #sprite {
     width: 200px;
@@ -97,4 +98,7 @@
 }
 #wg, #hg {
     top: 0.5px;
+}
+hr {
+    display: block;
 }
