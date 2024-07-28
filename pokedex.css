@@ -270,6 +270,6 @@ body {
 #evolcon {
     margin-left: 25px;
 }
-#info {
+#info, #info2 {
     height: fit-content;
 }
