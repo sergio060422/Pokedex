@@ -252,7 +252,7 @@ body {
     text-shadow: 1px 1px 1px black;
 }
 #lgcon {
-    transform: translateY(-12px);
+    transform: translateY(-15px);
 }
 #islg {
     transform: translateY(2px);
@@ -265,5 +265,5 @@ body {
     transform: translate(5px, 1.5px);
 }
 #nxtevo, #pstevo {
-    margin-top: 30px;
+    margin-top: 15px;
 }
