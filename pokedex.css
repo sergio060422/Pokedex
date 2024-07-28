@@ -210,7 +210,7 @@ body {
 *{
    font-family: mf;
 }
-#char, #tot, #bstat, #pstevo, #nxtevo, #Wg, #Hg, #cry, #lg, #islg, #tp {
+#char, #tot, #bstat, #pstevo, #nxtevo, #Wg, #Hg, #cry, #lg, #islg, #tp, #pokename, #evoname {
    font-weight: bold;
 }
 .stcon{
@@ -270,6 +270,9 @@ body {
 #info, #info2 {
     height: fit-content;
 }
-#sp, #infosp {
+#sp{
     display: block;
+}
+#info2 {
+    padding-bottom: 0px;
 }

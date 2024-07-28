@@ -101,10 +101,10 @@
 }
 hr {
     display: block;
-    padding: 0px;
-    margin: 0px;
-    width: 100%;
 }
 #evolcon {
     margin-top: 15px;
+}
+#hd {
+    margin-bottom: 20px;
 }
