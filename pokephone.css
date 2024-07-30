@@ -11,6 +11,9 @@
     background-image: none;
     border: none;
 }
+#bar:nth-child(1) {
+    text-align: center;
+}
 #bar {
     overflow-x: scroll;
 }
