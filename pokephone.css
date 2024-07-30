@@ -118,6 +118,8 @@ hr {
 #menu {
     width: 300px;
     margin-left: 0px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 #bar {
     border-bottom-width: 1px;
