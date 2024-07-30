@@ -132,8 +132,11 @@ hr {
     border-bottom-style: solid;
     padding-bottom: 30px;
 }
-#info, #info2 {
-    position: relative;
+#info {
     top: 0px;
     left: 0px;
+    position: relative;
+}
+#info2 {
+    transform: translateY(0px);
 }
