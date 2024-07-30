@@ -357,9 +357,25 @@ function get_poke(){
     } 
 }
 
+function show_menu(){
+    let menu = document.getElementById("menu");
+    menu.style.display = "block";
+}
+
+function hide_menu(e){
+    let menu = document.getElementById("menu");
+    if(e.target.tagName != "INPUT"){
+        menu.style.display = "none";    
+    }
+}
+
 function pika_pika(){
     let textbar = document.getElementById("textbar");
+    let body = document.getElementsByTagName("body");
     textbar.value = "bulbasaur";
+    textbar.addEventListener("focus", show_menu);
+    textbar.addEventListener("input", show_menu);
+    body[0].addEventListener("click", hide_menu);
     get_poke();
     get_evol();
     

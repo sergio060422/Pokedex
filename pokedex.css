@@ -10,12 +10,12 @@ body {
 }
 #textbar {
     font-size: 22px;
+    width: 20%;
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 20px;
     border-width: 1px;
     text-indent: 15px;
-    opacity: 0.8;
 }
 #hd {
     background-color: red;
@@ -37,6 +37,7 @@ body {
     border-width: 1px;
     padding-left: 5px;
     cursor: pointer;
+    z-index: 3;
 }
 /*
 #globalcon {
@@ -45,16 +46,11 @@ body {
 }
 */
 #main {
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 20px;
+    width: fit-content;
     text-align: center;
     padding: 20px;
     margin: 10px;
-    background-image: url(Images/back10.avif);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: cover;
+    height: 380px;
     
 }
 #sprite {
@@ -80,11 +76,8 @@ body {
 #pokename {
     font-size: 36px;
     margin-bottom: 20px;
-    background-color: rgba(42, 157, 226, 0.8);
     padding: 5px 10px 5px 10px;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 20px;
+
    
     
 }
@@ -225,8 +218,8 @@ body {
     border-top-width: 1px;
     margin-top: 15px;
 }
-#wg, #hg, #Wg, #Hg, #lg, #islg, #tp {
-    font-size: 24px;
+#wg, #hg, #Wg, #Hg, #lg, #islg, #tp, #cry {
+    font-size: 22px;
     display: inline-block;
 }
 #wg, #hg {
@@ -275,4 +268,38 @@ body {
 }
 #info2 {
     padding-bottom: 0px;
+}
+#textbar {
+    position: relative;
+    z-index: 2;
+}
+#menu {
+    width: 20%;
+    height: 400px;
+    display: none;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -10px);
+    margin-left: -13.5px;
+    z-index: 1;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-color: rgba(0, 0, 0, 0.8);
+}
+#bar {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding-bottom: 30px;
+}
+#info {
+    position: absolute;
+    top: 275px;
+    left: 350px;
+}
+#info2 {
+    position: relative;
+    transform: translateY(-20px);
 }
