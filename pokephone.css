@@ -134,4 +134,6 @@ hr {
 }
 #info, #info2 {
     position: relative;
+    top: 0px;
+    left: 0px;
 }
