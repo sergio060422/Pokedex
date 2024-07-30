@@ -11,7 +11,7 @@
     background-image: none;
     border: none;
 }
-#bar {
+#bar:nth-child(1) {
     text-align: center;
 }
 #bar {
