@@ -140,3 +140,6 @@ hr {
 #info2 {
     transform: translateY(0px);
 }
+#sp {
+    display: none;
+}
