@@ -113,6 +113,7 @@ hr {
 }
 #menu {
     width: 300px;
+    margin-left: 0px;
 }
 #bar {
     border-bottom-width: 1px;
@@ -127,6 +128,6 @@ hr {
 #info2 {
     transform: translateY(0px);
 }
-#sp {
+#spmain {
     display: none;
 }
