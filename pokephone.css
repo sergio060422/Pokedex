@@ -11,7 +11,7 @@
     background-image: none;
     border: none;
 }
-#bar:nth-child(1) {
+#bar {
     text-align: center;
 }
 #bar {
@@ -31,6 +31,7 @@
     padding-bottom: 4px;
     position: relative;
     transform: translateX(16px);
+    margin-left: 0px;
 }
 #bar {
     margin-bottom: 30px;
