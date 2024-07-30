@@ -111,3 +111,27 @@ hr {
 #lgcon {
     margin-bottom: 10px;
 }
+#menu {
+    width: 300px;
+    height: 400px;
+    display: none;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -10px);
+    margin-left: -13.5px;
+    z-index: 1;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-bottom-color: rgba(0, 0, 0, 0.8);
+}
+#bar {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding-bottom: 30px;
+}
+#info, #info2 {
+    position: relative;
+}
