@@ -14,9 +14,6 @@
 #bar:nth-child(1) {
     text-align: center;
 }
-#bar {
-    overflow-x: scroll;
-}
 #info, #info2 {
     width: 85%;
 } 
@@ -25,7 +22,7 @@
     position: relative;
 }
 #textbar {
-    width: 300px;
+    width: 80%;
     font-size: 20px;
     padding-top: 4px;
     padding-bottom: 4px;
@@ -116,10 +113,12 @@ hr {
     margin-bottom: 10px;
 }
 #menu {
-    width: 300px;
+    width: 80%;
     margin-left: 0px;
     left: 50%;
     transform: translate(-50%, -20px);
+    text-align: left;
+    padding-top: 25px;
 }
 #bar {
     border-bottom-width: 1px;
@@ -133,6 +132,7 @@ hr {
 }
 #info2 {
     transform: translateY(0px);
+    overflow: auto;
 }
 #spmain {
     display: none;

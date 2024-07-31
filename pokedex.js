@@ -2,8 +2,8 @@ let name = "", id = 0;
 
 function add_fun(){
     let start = document.getElementById("start");
-    start.addEventListener("click", get_poke);
-    start.addEventListener("click", get_evol);
+    start.addEventListener("click", fun_poke);
+    start.addEventListener("click", fun_evol);
 }
 
 function set_info(e){
@@ -124,9 +124,10 @@ function set_evol_info(e){
         
         function fun(){
             let textbar = document.getElementById("textbar");
-            textbar.value = data["name"];
-            get_poke();
-            get_evol();
+            textbar.value = "";
+            set_back_text();
+            get_poke(data["name"]);
+            get_evol(data["name"]);
         }
         
         card.addEventListener("click", fun);
@@ -189,9 +190,10 @@ function get_evol_chain(e){
                         sp.style.display = "block";
                         card.addEventListener("click", function (){
                             let textbar = document.getElementById("textbar");
-                            textbar.value = data3["name"];
-                            get_poke();
-                            get_evol();
+                            textbar.value = "";
+                            set_back_text();
+                            get_poke(data3["name"]);
+                            get_evol(data3["name"]);
                         });
                     }
                 }
@@ -239,9 +241,10 @@ function get_evol_chain(e){
                                  sp.style.display = "block";
                                  card.addEventListener("click", function (){
                                     let textbar = document.getElementById("textbar");
-                                    textbar.value = data3["name"];
-                                    get_poke();
-                                    get_evol();
+                                    textbar.value = "";
+                                    set_back_text();
+                                    get_poke(data3["name"]);
+                                    get_evol(data3["name"]);
                                 });
                              }
                          }
@@ -312,11 +315,21 @@ function set_evol(e){
     }
 }
 
-function get_evol(){
+function fun_poke(){
     let textbar = document.getElementById("textbar");
-    name = textbar.value;
+    get_poke(textbar.value);
+}
+
+function fun_evol(){
+    let textbar = document.getElementById("textbar");
+    get_evol(textbar.value);
+}
+
+function get_evol(pokemon){
+    name = pokemon;
     
     name = name.toLowerCase();
+    name = name.trim();
     
     if(name.length){
         let lk = "https://pokeapi.co/api/v2/pokemon-species/" + name;
@@ -328,11 +341,11 @@ function get_evol(){
     }
 }
 
-function get_poke(){
-    let textbar = document.getElementById("textbar");
-    name = textbar.value;
+function get_poke(pokemon){
+    name = pokemon;
     
     name = name.toLowerCase();
+    name = name.trim();
     
     if(name.length){
         let id;
@@ -357,31 +370,127 @@ function get_poke(){
     } 
 }
 
+let pokes = [], jdata, pokeid = new Map();
+
 function show_menu(){
     let menu = document.getElementById("menu");
+    let menucon = document.getElementById("menucon");
+    let textbar = document.getElementById("textbar");
+    let val = textbar.value;
+    let flag = 0;
     menu.style.display = "block";
+    val = val.trim();
+    val = val.toLowerCase();
+    
+    for(let i = menucon.childNodes.length - 1; i >= 0; i--){
+        menucon.removeChild(menucon.childNodes.item(i));
+    }
+    
+    if(val.length){
+        for(let i = 0; i < 1025; i++){
+            let name = pokes[i].substr(0, val.length);
+
+            if(flag && name != val){
+                break; 
+            }
+            if(!flag && name == val){
+                flag = 1;
+            }
+            if(flag){
+                let element = document.createElement("div");
+                element.className = "pokemenu";
+                menucon.appendChild(element);
+                
+                let pokename = document.createElement("label");
+                pokename.className = "namesp";
+                pokename.textContent = pokes[i][0].toUpperCase() + pokes[i].substr(1, pokes[i].length - 1);
+                element.appendChild(pokename);
+                
+                let hr = document.createElement("hr");
+                hr.style.display = "block";
+                hr.width = "90%";
+                menucon.appendChild(hr);
+                
+                element.onclick = function(){
+                    textbar.value = "";
+                    set_back_text();
+                    get_poke(pokes[i]);
+                    get_evol(pokes[i]);
+                }
+            }
+        }
+    }
+    else{
+        menu.style.display = "none";
+    }
+    
+    if(menucon.childNodes.length){
+        menucon.removeChild(menucon.lastElementChild);
+    }
+    else{
+        menu.style.display = "none";
+    }
 }
 
 function hide_menu(e){
     let menu = document.getElementById("menu");
+    let textbar = document.getElementById("textbar");
+    
     if(e.target.tagName != "INPUT"){
-        menu.style.display = "none";    
+        menu.style.display = "none";
+        
+        if(textbar.value == ""){
+            set_back_text();
+        }
+    }
+}
+
+function asgn(data){
+    jdata = data;
+    
+    for(let i = 0; i <= 1024; i++){
+        pokes.push(jdata["results"][i]["name"]);
+        pokeid[pokes[i]] = i + 1;
+    }
+    pokes.sort();
+}
+
+function ft(){
+    fetch("selected-text.json").then(ans => ans.json()).then(ans => asgn(ans));
+}
+
+function set_back_text(){
+    let textbar = document.getElementById("textbar");
+    textbar.value = "Join a Pokemon!";
+    textbar.style.color = "rgba(0, 0, 0, 0.4)";
+    textbar.style.fontStyle = "italic";
+    textbar.style.fontWeight = "bold";
+}
+
+function del_back_text(){
+    let textbar = document.getElementById("textbar");
+    
+    if(textbar.value == "Join a Pokemon!"){
+        textbar.value = "";
+        textbar.style.color = "rgba(0, 0, 0, 1)";
+        textbar.style.fontStyle = "normal";
+        textbar.style.fontWeight = "normal";
     }
 }
 
 function pika_pika(){
     let textbar = document.getElementById("textbar");
     let body = document.getElementsByTagName("body");
-    textbar.value = "bulbasaur";
     textbar.addEventListener("focus", show_menu);
+    textbar.addEventListener("focus", del_back_text);
     textbar.addEventListener("input", show_menu);
     body[0].addEventListener("click", hide_menu);
-    get_poke();
-    get_evol();
+    set_back_text();
+    get_poke("bulbasaur");
+    get_evol("bulbasaur");
     
-   
 }
-
+window.addEventListener("load", ft);
 window.addEventListener("load", add_fun);
 window.addEventListener("load", pika_pika);
 //ditto
