@@ -135,7 +135,7 @@ hr {
     padding-left: 10px;
 }
 #info2 {
-    transform: translateY(6px);
+    transform: translateY(5px);
     overflow: auto;
     padding-top: 20px; 
 }
