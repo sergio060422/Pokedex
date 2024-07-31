@@ -128,12 +128,16 @@ hr {
 #info {
     top: 0px;
     left: 0px;
-    margin-left: 20px;
     position: relative;
 }
+#info, #info2, #evolcon {
+    margin-left: 18px;
+    padding-left: 10px;
+}
 #info2 {
-    transform: translateY(0px);
+    transform: translateY(6px);
     overflow: auto;
+    padding-top: 20px; 
 }
 #spmain {
     display: none;
