@@ -28,7 +28,7 @@ function set_info(e){
             let lk2 = data["sprites"]["other"]["dream_world"]["front_default"];
             
             if(lk2 == null){
-                lk2 = "https://www.wikidex.net/wiki/"+name+"#/media/Archivo%3A"+name+".png";
+                lk2 = data["sprites"]["front_default"];
             }
             
             sprite.src = lk2;
