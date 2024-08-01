@@ -28,10 +28,14 @@ function set_info(e){
             let lk2 = data["sprites"]["other"]["dream_world"]["front_default"];
             
             if(lk2 == null){
-                lk2 = data["sprites"]["front_default"];
+                lk2 = "https://www.wikidex.net/wiki/Popplio#/media/Archivo%3A"+name+".png";
             }
             
             sprite.src = lk2;
+
+            sprite.onerror = function (){
+                sprite.src = data["sprite"]["front_default"];
+            }
         }
         maintype.src = "Types/"+poketype+".png"; 
         pokename.textContent = name[0].toUpperCase() + name.substr(1, name.length);
