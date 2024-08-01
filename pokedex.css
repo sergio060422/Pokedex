@@ -345,7 +345,7 @@ body {
 #textbar {
     background-color: rgb(240, 240, 240);
 }
-#textbar:: placeholder {
+#textbar::placeholder {
     font-style: italic;
     font-weigth: bold;
     opacity: 0.6;
