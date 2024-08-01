@@ -348,7 +348,7 @@ body {
 #textbar:: placeholder {
     font-style: italic;
     font-weigth: bold;
-    opacity: 0.65;
+    opacity: 0.6;
 }
 #menucon {
     overflow: auto;
