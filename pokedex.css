@@ -345,6 +345,10 @@ body {
 #textbar {
     background-color: rgb(240, 240, 240);
 }
+#textbar:: placeholder {
+    font-style: italic;
+    opacity: 0.65;
+}
 #menucon {
     overflow: auto;
     max-height: 370px;
