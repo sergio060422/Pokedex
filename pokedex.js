@@ -125,7 +125,6 @@ function set_evol_info(e){
         function fun(){
             let textbar = document.getElementById("textbar");
             textbar.value = "";
-            set_back_text();
             get_poke(data["name"]);
             get_evol(data["name"]);
         }
@@ -191,7 +190,6 @@ function get_evol_chain(e){
                         card.addEventListener("click", function (){
                             let textbar = document.getElementById("textbar");
                             textbar.value = "";
-                            set_back_text();
                             get_poke(data3["name"]);
                             get_evol(data3["name"]);
                         });
@@ -242,7 +240,6 @@ function get_evol_chain(e){
                                  card.addEventListener("click", function (){
                                     let textbar = document.getElementById("textbar");
                                     textbar.value = "";
-                                    set_back_text();
                                     get_poke(data3["name"]);
                                     get_evol(data3["name"]);
                                 });
@@ -413,7 +410,6 @@ function show_menu(){
                 
                 element.onclick = function(){
                     textbar.value = "";
-                    set_back_text();
                     get_poke(pokes[i]);
                     get_evol(pokes[i]);
                 }
@@ -438,10 +434,6 @@ function hide_menu(e){
     
     if(e.target.tagName != "INPUT"){
         menu.style.display = "none";
-        
-        if(textbar.value == ""){
-            set_back_text();
-        }
     }
 }
 
@@ -459,33 +451,12 @@ function ft(){
     fetch("selected-text.json").then(ans => ans.json()).then(ans => asgn(ans));
 }
 
-function set_back_text(){
-    let textbar = document.getElementById("textbar");
-    textbar.value = "Join a Pokemon!";
-    textbar.style.color = "rgba(0, 0, 0, 0.4)";
-    textbar.style.fontStyle = "italic";
-    textbar.style.fontWeight = "bold";
-}
-
-function del_back_text(){
-    let textbar = document.getElementById("textbar");
-    
-    if(textbar.value == "Join a Pokemon!"){
-        textbar.value = "";
-        textbar.style.color = "rgba(0, 0, 0, 1)";
-        textbar.style.fontStyle = "normal";
-        textbar.style.fontWeight = "normal";
-    }
-}
-
 function pika_pika(){
     let textbar = document.getElementById("textbar");
     let body = document.getElementsByTagName("body");
     textbar.addEventListener("focus", show_menu);
-    textbar.addEventListener("focus", del_back_text);
     textbar.addEventListener("input", show_menu);
     body[0].addEventListener("click", hide_menu);
-    set_back_text();
     get_poke("bulbasaur");
     get_evol("bulbasaur");
     
