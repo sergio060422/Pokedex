@@ -346,7 +346,6 @@ body {
     background-color: rgb(240, 240, 240);
 }
 #textbar::placeholder {
-    font-style: italic;
     font-weight: bold;
     opacity: 0.6;
 }
