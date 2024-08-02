@@ -1,4 +1,4 @@
-let name = "", id = 0;
+let pokes = [], aux = ["$"], jdata, pokeid = new Map(), name = "", id = 0, ispc = 0;
 
 function add_fun(){
     let start = document.getElementById("start");
@@ -20,7 +20,9 @@ function set_info(e){
         let aud = document.getElementById("aud");
         let hg = document.getElementById("hg");
         let wg = document.getElementById("wg");
+        let info = document.getElementById("info");
         
+        create_curr(data);
         infocon.style.display = "block";
         main.style.display = "block";
         sprite.src = lk;
@@ -32,16 +34,13 @@ function set_info(e){
             }
             
             sprite.src = lk2;
-
-            sprite.onerror = function (){
-                sprite.src = data["sprite"]["front_default"];
-            }
         }
         maintype.src = "Types/"+poketype+".png"; 
-        pokename.textContent = name[0].toUpperCase() + name.substr(1, name.length);
+        pokename.textContent = cap(name);
         aud.src = data["cries"]["latest"];
         hg.textContent = " " + data["height"] * 10 + "cm";
         wg.textContent = " " + data["weight"] / 10 + "kg";
+        info.style.left = main.offsetWidth + "px";
         
         if(data["types"].length == 2){
             let poketype2 = data["types"]["1"]["type"]["name"];
@@ -66,6 +65,10 @@ function set_info(e){
             let val = curr.childNodes.item(5);
             let stat_val = data["stats"][i + ""]["base_stat"];
             let mp = 1;
+            
+            if(ispc){
+                mp = 1.8;
+            }
             
             sum += stat_val;
         
@@ -100,10 +103,42 @@ function set_info(e){
     }
 }
 
+function create_curr(data){
+    let currevo = document.getElementById("currevo");
+    let val = aux[data["id"]];
+    
+    for(let i = currevo.childElementCount - 1; i >= 0; i--){
+        let element = currevo.children.item(i);
+        currevo.removeChild(element); 
+    }
+    
+    //currevo.style.display = "none";
+    
+    let card = document.createElement("div");
+    card.className = "minicard";
+    card.id = "minicard";
+    currevo.appendChild(card);
+
+    let evoname = document.createElement("label");
+    evoname.className = "evoname";
+    evoname.id = "evoname"
+    card.appendChild(evoname);
+
+    let evo = document.createElement("img");
+    evo.className = "evo";
+    evo.id = "evo";
+    evo.height = "140px";
+    card.appendChild(evo);
+    
+    evo.src = data["sprites"]["front_default"];
+    evoname.textContent = cap(val);
+}
+
 function set_evol_info(e){
     if(e.target.status == 200){
         let data = e.target.response;
         let pstevocon = document.getElementById("pstevocon");
+        let val = aux[data["id"]];
         
         for(let i = pstevocon.childElementCount - 1; i >= 0; i--){
             let element = pstevocon.children.item(i);
@@ -129,25 +164,22 @@ function set_evol_info(e){
         function fun(){
             let textbar = document.getElementById("textbar");
             textbar.value = "";
-            get_poke(data["name"]);
-            get_evol(data["name"]);
+            get_poke(val);
+            get_evol(val);
         }
         
         card.addEventListener("click", fun);
-        pstevo.style.display = "block";
         sp.style.display = "block";
         evo.src = data["sprites"]["front_default"];
-        evoname.textContent = data["name"][0].toUpperCase() + data["name"].substr(1, data["name"].length);
+        evoname.textContent = cap(val);
     }
 }
 
 function get_evol_chain(e){
     if(e.target.status == 200){
         let data = e.target.response;
-        let nxtevo = document.getElementById("nxtevo");
         let nxtevocon = document.getElementById("nxtevocon");
         let sp = document.getElementById("sp");
-        nxtevo.style.display = "none";
         sp.style.display = "none";
         
         for(let i = nxtevocon.childElementCount - 1; i >= 0; i--){
@@ -176,7 +208,7 @@ function get_evol_chain(e){
                 evo.height = "140px";
                 card.appendChild(evo);
                 
-                let lk = "https://pokeapi.co/api/v2/pokemon/" + data2[i + ""]["species"]["name"];
+                let lk = "https://pokeapi.co/api/v2/pokemon/" + pokeid[data2[i + ""]["species"]["name"].trim()];
                 let res = new XMLHttpRequest();
                 res.responseType = "json";
                 res.open("GET", lk, true);
@@ -187,15 +219,17 @@ function get_evol_chain(e){
                 res.onload = function (e){
                     if(e.target.status == 200){
                         let data3 = e.target.response;
+                        let namepoke = aux[data3["id"]];
+                                 
                         evo.src = data3["sprites"]["front_default"];
-                        evoname.textContent = data3["name"][0].toUpperCase() + data3["name"].substr(1, data3["name"].length);
-                        nxtevo.style.display = "block";
+                        evoname.textContent = cap(namepoke);
+                                 
                         sp.style.display = "block";
                         card.addEventListener("click", function (){
                             let textbar = document.getElementById("textbar");
                             textbar.value = "";
-                            get_poke(data3["name"]);
-                            get_evol(data3["name"]);
+                            get_poke(namepoke);
+                            get_evol(namepoke);
                         });
                     }
                 }
@@ -237,15 +271,16 @@ function get_evol_chain(e){
                          res.onload = function (e){
                              if(e.target.status == 200){
                                  let data3 = e.target.response;
+                                 let namepoke = aux[data3["id"]];
+                                 
                                  evo.src = data3["sprites"]["front_default"];
-                                 evoname.textContent = data3["name"][0].toUpperCase() + data3["name"].substr(1, data3["name"].length);
-                                 nxtevo.style.display = "block";
+                                 evoname.textContent = cap(namepoke);
                                  sp.style.display = "block";
                                  card.addEventListener("click", function (){
                                     let textbar = document.getElementById("textbar");
                                     textbar.value = "";
-                                    get_poke(data3["name"]);
-                                    get_evol(data3["name"]);
+                                    get_poke(namepoke);
+                                    get_evol(namepoke);
                                 });
                              }
                          }
@@ -275,11 +310,11 @@ function set_evol(e){
         }
         
         if(evol != null){
-            let name = evol["name"];
+            let name = evol["name"] + "";
+            name = name.trim();
             
             if(name.length){
-                let id;
-                let url = "https://pokeapi.co/api/v2/pokemon-species/" + name;
+                let url = "https://pokeapi.co/api/v2/pokemon-species/" + pokeid[name];
                 let req = new XMLHttpRequest();
                 req.responseType = "json";
                 req.open("GET", url, true);
@@ -287,7 +322,8 @@ function set_evol(e){
 
                 req.onload = function (e){
                     if(e.target.status){
-                        let data = e.target.response;id = data["id"];
+                        let data = e.target.response;
+                        let id = data["id"];
                         let lk = "https://pokeapi.co/api/v2/pokemon/" + id;
                         let res = new XMLHttpRequest();
                         res.addEventListener("load", set_evol_info);
@@ -300,11 +336,11 @@ function set_evol(e){
         }
         else {
             let minicard = document.getElementById("minicard");
-            let pstevo = document.getElementById("pstevo");
+            //let pstevo = document.getElementById("pstevo");
             let sp = document.getElementById("sp");
             sp.style.display = "none";
             minicard.style.display = "none";
-            pstevo.style.display = "none";
+            //pstevo.style.display = "none";
         }
         
         let lk = data["evolution_chain"]["url"];
@@ -333,7 +369,7 @@ function get_evol(pokemon){
     name = name.trim();
     
     if(name.length){
-        let lk = "https://pokeapi.co/api/v2/pokemon-species/" + name;
+        let lk = "https://pokeapi.co/api/v2/pokemon-species/" + pokeid[name];
         let res = new XMLHttpRequest();
         res.addEventListener("load", set_evol);
         res.responseType = "json";
@@ -350,7 +386,7 @@ function get_poke(pokemon){
     
     if(name.length){
         let id;
-        let url = "https://pokeapi.co/api/v2/pokemon-species/" + name;
+        let url = "https://pokeapi.co/api/v2/pokemon-species/" + pokeid[name];
         let req = new XMLHttpRequest();
         req.responseType = "json";
         req.open("GET", url, true);
@@ -371,7 +407,9 @@ function get_poke(pokemon){
     } 
 }
 
-let pokes = [], jdata, pokeid = new Map();
+function cap(s){
+    return s[0].toUpperCase() + s.substr(1, s.length - 1);
+}
 
 function show_menu(){
     let menu = document.getElementById("menu");
@@ -379,7 +417,6 @@ function show_menu(){
     let textbar = document.getElementById("textbar");
     let val = textbar.value;
     let flag = 0;
-    menu.style.display = "block";
     val = val.trim();
     val = val.toLowerCase();
     
@@ -396,6 +433,7 @@ function show_menu(){
             }
             if(!flag && name == val){
                 flag = 1;
+                menu.style.display = "block";
             }
             if(flag){
                 let element = document.createElement("div");
@@ -404,7 +442,7 @@ function show_menu(){
                 
                 let pokename = document.createElement("label");
                 pokename.className = "namesp";
-                pokename.textContent = pokes[i][0].toUpperCase() + pokes[i].substr(1, pokes[i].length - 1);
+                pokename.textContent = cap(pokes[i]);
                 element.appendChild(pokename);
                 
                 let hr = document.createElement("hr");
@@ -444,11 +482,21 @@ function hide_menu(e){
 function asgn(data){
     jdata = data;
     
-    for(let i = 0; i <= 1024; i++){
+    for(let i = 0; i < 1025; i++){
         pokes.push(jdata["results"][i]["name"]);
         pokeid[pokes[i]] = i + 1;
+        aux.push(pokes[i]);
     }
+    
     pokes.sort();
+    
+    //parche
+    pokeid["lycanroc-midday"] = pokeid["lycanroc"];
+    
+    
+    get_poke("bulbasaur");
+    get_evol("bulbasaur");
+    
 }
 
 function ft(){
@@ -458,13 +506,20 @@ function ft(){
 function pika_pika(){
     let textbar = document.getElementById("textbar");
     let body = document.getElementsByTagName("body");
+    let start = document.getElementById("start");
+    
     textbar.addEventListener("focus", show_menu);
+    textbar.style.visibility = "visible";
     textbar.addEventListener("input", show_menu);
     body[0].addEventListener("click", hide_menu);
-    get_poke("bulbasaur");
-    get_evol("bulbasaur");
+    
+    if(body[0].offsetWidth > 800){
+        ispc = 1;
+    }
+    
     
 }
+
 window.addEventListener("load", ft);
 window.addEventListener("load", add_fun);
 window.addEventListener("load", pika_pika);
