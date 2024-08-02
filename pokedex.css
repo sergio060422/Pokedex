@@ -173,7 +173,7 @@ body {
 .evoname {
     font-size: 24px;
     position: relative;
-    top: 160px;
+    top: 165px;
 }
 @font-face {
     font-family: mf;
@@ -346,12 +346,13 @@ body {
     transform: translateY(-50%);
 }
 #pstevocon, #currevo, #nxtevocon {
-    max-width: 700px;
+    max-width: 600px;
     position: relative;
 }
 #evolcon {
     height: 200px;
     margin-bottom: 100px;
+
 }
 #rgcon, #lfcon, #pstevocon, #currevo, #nxtevocon {
     display: inline-block;

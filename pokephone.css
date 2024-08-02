@@ -105,6 +105,7 @@ hr {
 }
 #evolcon {
     margin-top: 15px;
+    
 }
 #hd {
     border-bottom-width: 20px;
@@ -146,4 +147,24 @@ hr {
     width: auto;
     padding-bottom: 10px;
     min-height: 320px;
+}
+#rgcon, #lfcon, #pstevocon, #currevo, #nxtevocon {
+    position: relative;
+    top: 0%;
+    transform: translateY(0%);
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    height: fit-content;
+    width: fit-content;
+}
+#nxtevocon {
+    height: auto;
+    text-align: center;
+}
+#rgcon, #lfcon {
+    top: 45px;
+}
+#evol {
+    text-align: left;
 }

@@ -1,4 +1,4 @@
-let pokes = [], aux = ["$"], jdata, pokeid = new Map(), name = "", id = 0, ispc = 0;
+let pokes = [], aux = ["$"], jdata, pokeid = new Map(), name = "", id = 0, ispc = 0, dis = "inline-block";
 
 function add_fun(){
     let start = document.getElementById("start");
@@ -180,8 +180,8 @@ function set_evol_info(e){
         sp.style.display = "block";
         evo.src = data["sprites"]["front_default"];
         evoname.textContent = cap(val);
-        lfcon.style.display = "inline-block";
-        currevo.style.display = "inline-block";
+        lfcon.style.display = dis;
+        currevo.style.display = dis;
         let evolcon = document.getElementById("evolcon");
         evolcon.style.display = "block";
     }
@@ -241,8 +241,8 @@ function get_evol_chain(e){
                         evo.src = data3["sprites"]["front_default"];
                         evoname.textContent = cap(namepoke);
                         sp.style.display = "block";
-                        rgcon.style.display = "inline-block";
-                        currevo.style.display = "inline-block";
+                        rgcon.style.display = dis;
+                        currevo.style.display = dis;
                         
                         card.addEventListener("click", function (){
                             let textbar = document.getElementById("textbar");
@@ -299,8 +299,8 @@ function get_evol_chain(e){
                                  evo.src = data3["sprites"]["front_default"];
                                  evoname.textContent = cap(namepoke);
                                  sp.style.display = "block";
-                                 rgcon.style.display = "inline-block";
-                                 currevo.style.display = "inline-block";
+                                 rgcon.style.display = dis;
+                                 currevo.style.display = dis;
                                  
                                  card.addEventListener("click", function (){
                                     let textbar = document.getElementById("textbar");
@@ -407,6 +407,9 @@ function get_evol(pokemon){
 function get_poke(pokemon){
     let currevo = document.getElementById("currevo");
     let rgcon = document.getElementById("rgcon");
+    let body = document.getElementsByTagName("body");
+    let fl1 = document.getElementById("fl1");
+    let fl2 = document.getElementById("fl2");
     
     name = pokemon;
     
@@ -416,17 +419,19 @@ function get_poke(pokemon){
     let evolcon = document.getElementById("evolcon");
     evolcon.style.display = "none";
     
-    if(name == "eevee"){
-        evolcon.style.height = "400px";
-        rgcon.style.top = "-12px";
-        currevo.style.top = "-12px"; 
-    }
-    else{
-        evolcon.style.height = "200px";
-        rgcon.style.top = "50%";
-        rgcon.style.transform = "translateY(0%)";
-        currevo.style.top = "50%";
-        currevo.style.transform = "translateY(-50%)";
+    if(body[0].offsetWidth > 900){
+        if(name == "eevee"){
+            evolcon.style.height = "400px";
+            rgcon.style.top = "-12px";
+            currevo.style.top = "-12px";
+        }
+        else{
+             evolcon.style.height = "200px";
+             rgcon.style.top = "50%";
+             rgcon.style.transform = "translateY(0%)";
+             currevo.style.top = "50%";
+             currevo.style.transform = "translateY(-50%)";
+        }   
     }
     
     if(name.length){
@@ -534,11 +539,6 @@ function asgn(data){
     }
     
     pokes.sort();
-    
-    //parche
-    pokeid["lycanroc-midday"] = pokeid["lycanroc"];
-    
-    
     get_poke("bulbasaur");
     get_evol("bulbasaur");
     
@@ -548,21 +548,67 @@ function ft(){
     fetch("selected-text.json").then(ans => ans.json()).then(ans => asgn(ans));
 }
 
+function resz(){
+    let currevo = document.getElementById("currevo");
+    let pstevocon = document.getElementById("pstevocon");
+    let nxtevocon = document.getElementById("nxtevocon");
+    let lfcon = document.getElementById("lfcon");
+    let rgcon = document.getElementById("rgcon");
+    let body = document.getElementsByTagName("body");
+    let fl1 = document.getElementById("fl1");
+    let fl2 = document.getElementById("fl2");
+    let evolcon = document.getElementById("evolcon");
+    
+    if(body[0].offsetWidth > 900){
+        fl1.src = "Images/right.png";
+        fl2.src = "Images/right.png";
+        ispc = 1;
+        dis = "inline-block";
+        evolcon.height = "200px";
+        currevo.style.display = dis;
+        if(lfcon.style.display != "none"){
+            lfcon.style.display = dis;    
+        }
+        if(rgcon.style.display != "none"){
+            rgcon.style.display = dis;    
+        }
+        pstevocon.style.display = dis;
+        nxtevocon.style.display = dis;
+        console.log("pc");
+    }
+    else{
+        fl1.src = "Images/down.png";
+        fl2.src = "Images/down.png";
+        ispc = 0;
+        dis = "block";
+        currevo.style.display = dis;
+        if(lfcon.style.display != "none"){
+            lfcon.style.display = dis;    
+        }
+        if(rgcon.style.display != "none"){
+            rgcon.style.display = dis;    
+        }
+        pstevocon.style.display = dis;
+        nxtevocon.style.display = dis;
+    }
+}
+
 function pika_pika(){
     let textbar = document.getElementById("textbar");
     let body = document.getElementsByTagName("body");
-    let start = document.getElementById("start");
     
     textbar.addEventListener("focus", show_menu);
     textbar.style.visibility = "visible";
     textbar.addEventListener("input", show_menu);
     body[0].addEventListener("click", hide_menu);
     
-    if(body[0].offsetWidth > 800){
+    resz();
+    
+    if(body[0].offsetWidth > 900){
         ispc = 1;
     }
     
-    
+    new ResizeObserver(resz).observe(body[0]);
 }
 
 window.addEventListener("load", ft);
