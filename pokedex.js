@@ -20,7 +20,6 @@ function set_info(e){
         let aud = document.getElementById("aud");
         let hg = document.getElementById("hg");
         let wg = document.getElementById("wg");
-        let info = document.getElementById("info");
         
         create_curr(data);
         infocon.style.display = "block";
@@ -40,7 +39,6 @@ function set_info(e){
         aud.src = data["cries"]["latest"];
         hg.textContent = " " + data["height"] * 10 + "cm";
         wg.textContent = " " + data["weight"] / 10 + "kg";
-        info.style.left = main.offsetWidth + "px";
         
         if(data["types"].length == 2){
             let poketype2 = data["types"]["1"]["type"]["name"];
