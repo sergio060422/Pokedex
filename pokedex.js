@@ -104,13 +104,18 @@ function set_info(e){
 function create_curr(data){
     let currevo = document.getElementById("currevo");
     let val = aux[data["id"]];
+    let lfcon = document.getElementById("lfcon");
+    let rgcon = document.getElementById("rgcon");
+    
+    lfcon.style.display = "none";
+    rgcon.style.display = "none";
     
     for(let i = currevo.childElementCount - 1; i >= 0; i--){
         let element = currevo.children.item(i);
         currevo.removeChild(element); 
     }
     
-    //currevo.style.display = "none";
+    currevo.style.display = "none";
     
     let card = document.createElement("div");
     card.className = "minicard";
@@ -121,6 +126,9 @@ function create_curr(data){
     evoname.className = "evoname";
     evoname.id = "evoname"
     card.appendChild(evoname);
+    evoname.style.borderBottomColor = "orange";
+    evoname.style.borderBottomWidth = "3px";
+    evoname.style.borderBottomStyle = "solid";
 
     let evo = document.createElement("img");
     evo.className = "evo";
@@ -137,6 +145,8 @@ function set_evol_info(e){
         let data = e.target.response;
         let pstevocon = document.getElementById("pstevocon");
         let val = aux[data["id"]];
+        let lfcon = document.getElementById("lfcon");
+        let currevo = document.getElementById("currevo");
         
         for(let i = pstevocon.childElementCount - 1; i >= 0; i--){
             let element = pstevocon.children.item(i);
@@ -170,6 +180,10 @@ function set_evol_info(e){
         sp.style.display = "block";
         evo.src = data["sprites"]["front_default"];
         evoname.textContent = cap(val);
+        lfcon.style.display = "inline-block";
+        currevo.style.display = "inline-block";
+        let evolcon = document.getElementById("evolcon");
+        evolcon.style.display = "block";
     }
 }
 
@@ -178,6 +192,7 @@ function get_evol_chain(e){
         let data = e.target.response;
         let nxtevocon = document.getElementById("nxtevocon");
         let sp = document.getElementById("sp");
+        let flag = 0;
         sp.style.display = "none";
         
         for(let i = nxtevocon.childElementCount - 1; i >= 0; i--){
@@ -218,11 +233,17 @@ function get_evol_chain(e){
                     if(e.target.status == 200){
                         let data3 = e.target.response;
                         let namepoke = aux[data3["id"]];
-                                 
+                        let rgcon = document.getElementById("rgcon");
+                        let currevo = document.getElementById("currevo");
+                        let evolcon = document.getElementById("evolcon");
+                        
+                        evolcon.style.display = "block";
                         evo.src = data3["sprites"]["front_default"];
                         evoname.textContent = cap(namepoke);
-                                 
                         sp.style.display = "block";
+                        rgcon.style.display = "inline-block";
+                        currevo.style.display = "inline-block";
+                        
                         card.addEventListener("click", function (){
                             let textbar = document.getElementById("textbar");
                             textbar.value = "";
@@ -270,10 +291,17 @@ function get_evol_chain(e){
                              if(e.target.status == 200){
                                  let data3 = e.target.response;
                                  let namepoke = aux[data3["id"]];
+                                 let rgcon = document.getElementById("rgcon");
+                                 let currevo = document.getElementById("currevo");
+                                 let evolcon = document.getElementById("evolcon");
+                                 evolcon.style.display = "block";
                                  
                                  evo.src = data3["sprites"]["front_default"];
                                  evoname.textContent = cap(namepoke);
                                  sp.style.display = "block";
+                                 rgcon.style.display = "inline-block";
+                                 currevo.style.display = "inline-block";
+                                 
                                  card.addEventListener("click", function (){
                                     let textbar = document.getElementById("textbar");
                                     textbar.value = "";
@@ -286,7 +314,9 @@ function get_evol_chain(e){
                 }
             }
         }
+      
     }
+    
 }
 
 function set_evol(e){
@@ -334,11 +364,9 @@ function set_evol(e){
         }
         else {
             let minicard = document.getElementById("minicard");
-            //let pstevo = document.getElementById("pstevo");
             let sp = document.getElementById("sp");
             sp.style.display = "none";
             minicard.style.display = "none";
-            //pstevo.style.display = "none";
         }
         
         let lk = data["evolution_chain"]["url"];
@@ -377,10 +405,29 @@ function get_evol(pokemon){
 }
 
 function get_poke(pokemon){
+    let currevo = document.getElementById("currevo");
+    let rgcon = document.getElementById("rgcon");
+    
     name = pokemon;
     
     name = name.toLowerCase();
     name = name.trim();
+    
+    let evolcon = document.getElementById("evolcon");
+    evolcon.style.display = "none";
+    
+    if(name == "eevee"){
+        evolcon.style.height = "400px";
+        rgcon.style.top = "-12px";
+        currevo.style.top = "-12px"; 
+    }
+    else{
+        evolcon.style.height = "200px";
+        rgcon.style.top = "50%";
+        rgcon.style.transform = "translateY(0%)";
+        currevo.style.top = "50%";
+        currevo.style.transform = "translateY(-50%)";
+    }
     
     if(name.length){
         let id;

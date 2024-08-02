@@ -157,22 +157,12 @@ body {
     margin-top: 20px;
     display: block;
 }
-#char, #pstevo, #nxtevo {
+#char, #evol {
     font-size: 28px;
-}
-#nxtevocon {
-    padding-bottom: 15px;
 }
 .minicard {
     width: fit-content;
     text-align: center;
-    background-image: url(Images/back11.avif);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    border-width: 1px;
-    border-radius: 20px;
-    border-style: solid;
     margin: 20px 10px 20px 0px;
     cursor: pointer;
 }
@@ -183,11 +173,7 @@ body {
 .evoname {
     font-size: 24px;
     position: relative;
-    top: 10px;
-}
-#pstevo {
-    display: block;
-    margin-bottom: 15px;
+    top: 160px;
 }
 @font-face {
     font-family: mf;
@@ -200,7 +186,7 @@ body {
 *{
    font-family: mf;
 }
-#char, #tot, #bstat, #pstevo, #nxtevo, #Wg, #Hg, #cry, #lg, #islg, #tp, #pokename, .evoname, .namesp {
+#char, #tot, #bstat, #evol, #Wg, #Hg, #cry, #lg, #islg, #tp, #pokename, .evoname, .namesp {
    font-weight: bold;
 }
 .stcon{
@@ -251,8 +237,9 @@ body {
 #islg {
     transform: translate(5px, 1.5px);
 }
-#nxtevo, #pstevo {
+#evol {
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 #evolcon {
     margin-left: 25px;
@@ -359,8 +346,30 @@ body {
     transform: translateY(-50%);
 }
 #pstevocon, #currevo, #nxtevocon {
-    display: inline-block;
     max-width: 700px;
     position: relative;
-    top: 50%;
 }
+#evolcon {
+    height: 200px;
+    margin-bottom: 100px;
+}
+#rgcon, #lfcon, #pstevocon, #currevo, #nxtevocon {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#rgcon, #lfcon {
+    margin-right: 8px;
+    transform: translateY(0px);
+}
+#fl1, #fl2 {   
+    height: 40px;
+    width: auto; 
+    margin: 0px;
+}
+#evol {
+    display: block;
+    margin-bottom: 0px;
+}
+
