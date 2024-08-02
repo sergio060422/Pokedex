@@ -3,7 +3,6 @@ let pokes = [], aux = ["$"], jdata, pokeid = new Map(), name = "", id = 0, ispc 
 function add_fun(){
     let start = document.getElementById("start");
     start.addEventListener("click", fun_poke);
-    start.addEventListener("click", fun_evol);
 }
 
 function set_info(e){
@@ -110,6 +109,8 @@ function create_curr(data){
     lfcon.style.display = "none";
     rgcon.style.display = "none";
     
+    get_evol(name);
+    
     for(let i = currevo.childElementCount - 1; i >= 0; i--){
         let element = currevo.children.item(i);
         currevo.removeChild(element); 
@@ -173,7 +174,6 @@ function set_evol_info(e){
             let textbar = document.getElementById("textbar");
             textbar.value = "";
             get_poke(val);
-            get_evol(val);
         }
         
         card.addEventListener("click", fun);
@@ -248,7 +248,6 @@ function get_evol_chain(e){
                             let textbar = document.getElementById("textbar");
                             textbar.value = "";
                             get_poke(namepoke);
-                            get_evol(namepoke);
                         });
                     }
                 }
@@ -306,7 +305,6 @@ function get_evol_chain(e){
                                     let textbar = document.getElementById("textbar");
                                     textbar.value = "";
                                     get_poke(namepoke);
-                                    get_evol(namepoke);
                                 });
                              }
                          }
@@ -381,11 +379,6 @@ function set_evol(e){
 function fun_poke(){
     let textbar = document.getElementById("textbar");
     get_poke(textbar.value);
-}
-
-function fun_evol(){
-    let textbar = document.getElementById("textbar");
-    get_evol(textbar.value);
 }
 
 function get_evol(pokemon){
@@ -503,7 +496,6 @@ function show_menu(){
                 element.onclick = function(){
                     textbar.value = "";
                     get_poke(pokes[i]);
-                    get_evol(pokes[i]);
                 }
             }
         }
@@ -540,7 +532,6 @@ function asgn(data){
     
     pokes.sort();
     get_poke("bulbasaur");
-    get_evol("bulbasaur");
     
 }
 
