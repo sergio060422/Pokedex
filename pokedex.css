@@ -350,9 +350,8 @@ body {
     position: relative;
 }
 #evolcon {
-    height: 200px;
-    margin-bottom: 100px;
-
+    height: auto;
+    padding-bottom: 40px;
 }
 #rgcon, #lfcon, #pstevocon, #currevo, #nxtevocon {
     display: inline-block;
@@ -373,4 +372,6 @@ body {
     display: block;
     margin-bottom: 0px;
 }
-
+#fill {
+    height: 50px;
+}

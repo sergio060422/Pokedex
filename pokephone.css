@@ -159,12 +159,14 @@ hr {
     width: fit-content;
 }
 #nxtevocon {
-    height: auto;
     text-align: center;
-}
-#rgcon, #lfcon {
-    top: 45px;
 }
 #evol {
     text-align: left;
+}
+#pstevocon, #currevo, #nxtevocon {
+    top: -40px;
+}
+#fill {
+    height: 0px;
 }
